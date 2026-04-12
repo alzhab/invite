@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Жанель - Қыз ұзату той</title>
+
+  <!-- DNS prefetch for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- Preload critical local font — prevents layout shift for calligraphy -->
+  <link rel="preload" href="assets/fonts/ceremoniousone.ttf" as="font" type="font/ttf" crossorigin />
+
+  <!-- Preload critical images — hero background + rose -->
+  <link rel="preload" href="assets/images/pexels-marina-zasorina-7717488.jpg" as="image" />
+
+  <!-- Google Fonts — display=swap for non-blocking load -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Caveat:wght@400..700&family=Kurale&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="lang-switcher">
+    <button class="lang-btn active" id="btn-kk" onclick="setLang('kk')">ҚАЗ</button>
+    <button class="lang-btn"        id="btn-ru" onclick="setLang('ru')">РУС</button>
+  </div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <div class="hero-arch" data-anim="scale" data-d="0">
+      <div class="arch-inner">
+        <h1  class="arch-name"  data-anim="up"   data-d="280">Жанель</h1>
+        <p   class="arch-event" data-anim="fade" data-d="460"
+             data-kk="ҚЫЗ ҰЗАТУ" data-ru="ҚЫЗ ҰЗАТУ">ҚЫЗ ҰЗАТУ</p>
+        <div class="arch-rule"  data-anim="fade" data-d="580"></div>
+        <p   class="arch-date"  data-anim="up"   data-d="640">02 | 08 | 2026</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INVITATION ══ -->
+  <section class="invite" data-section>
+    <p class="invite-greeting"
+       data-anim="up" data-d="0"
+       data-kk="Құрметті қонақтар!"
+       data-ru="Дорогие гости!">Құрметті қонақтар!</p>
+
+    <p class="invite-pre"
+       data-anim="fade" data-d="100"
+       data-kk="Сіздерді аяулы"
+       data-ru="Приглашаем вас">Сіздерді аяулы</p>
+
+    <p class="invite-name" data-anim="scale" data-d="220">Жанель</p>
+
+    <p class="invite-body-text"
+       data-anim="up" data-d="380"
+       data-kk="қызымыздың ұзату тойына арналған салтанатты ас дастарханымыздың қадірлі қонағы болуға шақырамыз!"
+       data-ru="на торжественный ужин по случаю проводов нашей дорогой дочери!">
+      қызымыздың ұзату тойына арналған<br>
+      салтанатты ас дастарханымыздың<br>
+      қадірлі қонағы болуға шақырамыз!
+    </p>
+
+    <div class="pearls-row">
+      <div class="p-bead sm" data-anim="pearl" data-d="480"></div>
+      <div class="p-bead md" data-anim="pearl" data-d="530"></div>
+      <div class="p-bead lg" data-anim="pearl" data-d="580"></div>
+      <div class="p-bead md" data-anim="pearl" data-d="630"></div>
+      <div class="p-bead sm" data-anim="pearl" data-d="680"></div>
+      <div class="p-bead md" data-anim="pearl" data-d="630"></div>
+      <div class="p-bead lg" data-anim="pearl" data-d="580"></div>
+      <div class="p-bead md" data-anim="pearl" data-d="530"></div>
+      <div class="p-bead sm" data-anim="pearl" data-d="480"></div>
+    </div>
+
+    <p class="invite-regards"
+       data-anim="fade" data-d="620"
+       data-kk="күрметпен, Той иесі:"
+       data-ru="с уважением, Организатор:">құрметпен, Той иесі:</p>
+    <p class="invite-host" data-anim="up" data-d="700">Алтын</p>
+
+    <div class="invite-date-block" data-anim="up" data-d="800">
+      <p class="invite-date-label"
+         data-kk="Той салтанаты:"
+         data-ru="Торжество состоится:">Той салтанаты:</p>
+      <p class="invite-date-value"
+         data-kk="02 ТАМЫЗ 2026 ЖЫЛЫ · САҒАТ 13:00"
+         data-ru="02 АВГУСТА 2026 ГОДА · В 13:00">
+        02 ТАМЫЗ 2026 ЖЫЛЫ · САҒАТ 13:00
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ CALENDAR ══ -->
+  <section class="calendar-section" data-section>
+    <p class="cal-month"
+       data-anim="fade" data-d="0"
+       data-kk="ТАМЫЗ · 2026"
+       data-ru="АВГУСТ · 2026">ТАМЫЗ · 2026</p>
+    <div class="cal-grid" id="calGrid" data-anim="up" data-d="160"></div>
+  </section>
+
+  <!-- ══ LOCATION ══ -->
+  <section class="location-wrap" data-section>
+    <div class="pearl-scatter" data-anim="pearl" data-d="300" style="width:8px;height:8px;top:14px;left:18px;"></div>
+    <div class="pearl-scatter" data-anim="pearl" data-d="360" style="width:12px;height:12px;top:8px;right:40px;"></div>
+    <div class="pearl-scatter" data-anim="pearl" data-d="420" style="width:7px;height:7px;top:30px;right:14px;"></div>
+    <div class="pearl-scatter" data-anim="pearl" data-d="480" style="width:10px;height:10px;bottom:20px;left:10px;"></div>
+    <div class="pearl-scatter" data-anim="pearl" data-d="540" style="width:9px;height:9px;bottom:30px;right:20px;"></div>
+    <div class="location-arch" data-anim="scale" data-d="0">
+      <p class="loc-label"
+         data-anim="up" data-d="220"
+         data-kk="Мекенжай:"
+         data-ru="Адрес:">Мекенжай:</p>
+      <p class="loc-venue"
+         data-anim="up" data-d="320"
+         data-kk="Louvre Ball Room мейрамханасы"
+         data-ru="Ресторан Louvre Ball Room">Louvre Ball Room мейрамханасы</p>
+      <p class="loc-address"
+         data-anim="up" data-d="400"
+         data-kk="Алматы қаласы · Розыбакиев көшесі, 182а"
+         data-ru="г. Алматы · ул. Розыбакиева, 182а">
+        Алматы қаласы · Розыбакиев көшесі, 182а
+      </p>
+      <a class="map-btn" data-anim="fade" data-d="500"
+         href="https://go.2gis.com/KzjMl" target="_blank" rel="noopener">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <span data-kk="КАРТА" data-ru="КАРТА">КАРТА</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══ RSVP ══ -->
+  <section class="rsvp" data-section>
+    <p class="rsvp-heading"
+       data-anim="up" data-d="0"
+       data-kk="Тойға қатысуыңызды растауыңызды сұраймыз!"
+       data-ru="Просим подтвердить ваше участие в торжестве!">
+      Тойға қатысуыңызды<br>растауыңызды сұраймыз!
+    </p>
+
+    <form class="rsvp-form" id="rsvpForm" method="POST"
+          action="https://script.google.com/macros/s/AKfycbyaB3w-_gd8ycJqcDJsWIww2di-r9IBzBEU0ISsta2KvkVYC8uggk5fvE4xXbygzV-edg/exec">
+      <div data-anim="up" data-d="160">
+        <label class="form-label"
+               data-kk="АТЫ-ЖӨНІҢІЗ:"
+               data-ru="ВАШЕ ИМЯ:">АТЫ-ЖӨНІҢІЗ:</label>
+        <input class="form-input" type="text" id="rsvpName"
+               placeholder="Есімді енгізіңіз…" required name="fullName" />
+      </div>
+
+      <p class="form-note"
+         data-anim="fade" data-d="240"
+         data-kk="(ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)"
+         data-ru="(ЕСЛИ ВЫ ПРИДЁТЕ С СУПРУГОМ/ОЙ, ПРОСИМ УКАЗАТЬ ИМЕНА ОБОИХ)">
+        (ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ<br>ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)
+      </p>
+
+      <div data-anim="up" data-d="320">
+        <label class="form-label"
+               data-kk="ҚАТЫСУЫҢЫЗ:"
+               data-ru="ВАШЕ УЧАСТИЕ:">ҚАТЫСУЫҢЫЗ:</label>
+        <div class="radio-list">
+          <label class="radio-opt" onclick="selectOpt(this,'YES')">
+            <input type="radio" name="attendance" value="YES" />
+            <div class="radio-circle"></div>
+            <span class="radio-text" data-kk="ҚАТЫСАМЫН" data-ru="ПРИДУ">ҚАТЫСАМЫН</span>
+          </label>
+          <label class="radio-opt" onclick="selectOpt(this,'PLUS-1')">
+            <input type="radio" name="attendance" value="PLUS-1" />
+            <div class="radio-circle"></div>
+            <span class="radio-text"
+                  data-kk="ЖҰБАЙЫММЕН БАРАМЫН"
+                  data-ru="ПРИДУ С СУПРУГОМ/ОЙ">ЖҰБАЙЫММЕН БАРАМЫН</span>
+          </label>
+          <label class="radio-opt" onclick="selectOpt(this,'NO')">
+            <input type="radio" name="attendance" value="NO" />
+            <div class="radio-circle"></div>
+            <span class="radio-text"
+                  data-kk="ӨКІНІШКЕ ҚАРАЙ, КЕЛЕ АЛМАЙМЫН"
+                  data-ru="К СОЖАЛЕНИЮ, НЕ СМОГУ">ӨКІНІШКЕ ҚАРАЙ, КЕЛЕ АЛМАЙМЫН</span>
+          </label>
+        </div>
+      </div>
+
+      <button class="submit-btn" data-anim="scale" data-d="460"
+              type="submit" id="submitBtn">Жіберу</button>
+    </form>
+
+    <div class="success-msg" id="successMsg">
+      <div class="success-icon">🌸</div>
+      <p>Рахмет!<br>Жауабыңыз қабылданды. Тойда кездесеміз!</p>
+    </div>
+  </section>
+
+  <!-- ══ COUNTDOWN — dark, last section ══ -->
+  <section class="countdown" data-section>
+    <p class="cd-title"
+       data-anim="fade" data-d="0"
+       data-kk="ТОЙ САЛТАНАТЫНА ДЕЙІН:"
+       data-ru="ДО ТОРЖЕСТВА ОСТАЛОСЬ:">ТОЙ САЛТАНАТЫНА ДЕЙІН:</p>
+    <div class="cd-grid">
+      <div class="cd-item" data-anim="up" data-d="120">
+        <div class="cd-num" id="cd-days">--</div>
+        <div class="cd-label" data-kk="КҮН" data-ru="ДНЕЙ">КҮН</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="180">·</div>
+      <div class="cd-item" data-anim="up" data-d="220">
+        <div class="cd-num" id="cd-hours">--</div>
+        <div class="cd-label" data-kk="САҒАТ" data-ru="ЧАСОВ">САҒАТ</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="280">·</div>
+      <div class="cd-item" data-anim="up" data-d="320">
+        <div class="cd-num" id="cd-mins">--</div>
+        <div class="cd-label" data-kk="МИНУТ" data-ru="МИНУТ">МИНУТ</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="380">·</div>
+      <div class="cd-item" data-anim="up" data-d="420">
+        <div class="cd-num" id="cd-secs">--</div>
+        <div class="cd-label" data-kk="СЕКУНД" data-ru="СЕКУНД">СЕКУНД</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-dark" data-section>
+    <p data-anim="fade" data-d="0"
+       data-kk="ЖАНЕЛЬ · 02 ТАМЫЗ 2026"
+       data-ru="ЖАНЕЛЬ · 02 АВГУСТА 2026">ЖАНЕЛЬ · 02 ТАМЫЗ 2026</p>
+  </footer>
+
+  <script>
+    // ── LANGUAGE ─────────────────────────────────────────
+    let lang = 'kk';
+    function setLang(l) {
+      lang = l;
+      document.getElementById('btn-kk').classList.toggle('active', l === 'kk');
+      document.getElementById('btn-ru').classList.toggle('active', l === 'ru');
+      document.querySelectorAll('[data-kk]').forEach(el => {
+        el.textContent = l === 'ru' ? el.dataset.ru : el.dataset.kk;
+      });
+      document.getElementById('rsvpName').placeholder =
+        l === 'ru' ? 'Введите имя…' : 'Есімді енгізіңіз…';
+      document.getElementById('submitBtn').textContent =
+        l === 'ru' ? 'Отправить' : 'Жіберу';
+    }
+
+    // ── CALENDAR ─────────────────────────────────────────
+    (function () {
+      const grid = document.getElementById('calGrid');
+      ['ДС','СС','СР','БС','ЖМ','СБ','ЖС'].forEach(d => {
+        const el = document.createElement('div');
+        el.className = 'cal-dow';
+        el.textContent = d;
+        grid.appendChild(el);
+      });
+      for (let i = 0; i < 5; i++) {
+        const el = document.createElement('div');
+        el.className = 'cal-day empty';
+        grid.appendChild(el);
+      }
+      for (let d = 1; d <= 31; d++) {
+        const el = document.createElement('div');
+        el.className = 'cal-day' + (d === 2 ? ' highlight' : '');
+        el.textContent = d;
+        grid.appendChild(el);
+      }
+    })();
+
+    // ── COUNTDOWN ────────────────────────────────────────
+    const TARGET = new Date('2026-08-02T13:00:00+06:00');
+    function pad(n) { return String(n).padStart(2, '0'); }
+    function tick() {
+      const diff = TARGET - Date.now();
+      if (diff <= 0) {
+        ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id =>
+          document.getElementById(id).textContent = '00');
+        return;
+      }
+      document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
+      document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
+      document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
+      document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
+    }
+    tick();
+    setInterval(tick, 1000);
+
+    // ── RADIO ─────────────────────────────────────────────
+    let selectedAttend = null;
+    function selectOpt(el, val) {
+      document.querySelectorAll('.radio-opt').forEach(o => o.classList.remove('selected'));
+      el.classList.add('selected');
+      selectedAttend = val;
+      el.querySelector('input').checked = true;
+    }
+
+    // ── FORM SUBMIT ───────────────────────────────────────
+		document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+
+			const name = document.getElementById('rsvpName').value.trim();
+			// Убедитесь, что переменная selectedAttend у вас определяется в функции selectOpt
+			if (!name || !selectedAttend) {
+				alert(lang === 'ru' ? 'Заполните все поля.' : 'Барлық өрістерді толтырыңыз.');
+				return;
+			}
+
+			const btn = document.getElementById('submitBtn');
+			const form = e.target;
+
+			btn.disabled = true;
+			btn.textContent = lang === 'ru' ? 'Отправка...' : 'Жіберілуде…';
+
+			// Создаем данные для отправки
+			const formData = new FormData();
+			formData.append('fullName', name);
+			formData.append('attendance', selectedAttend);
+
+			// ОТПРАВКА В GOOGLE
+			fetch(form.action, {
+				method: 'POST',
+				body: formData,
+				mode: 'no-cors' // Важно для Google Script
+			})
+				.then(() => {
+					// Этот код сработает после успешной отправки
+					document.getElementById('rsvpForm').style.display = 'none';
+					const msg = document.getElementById('successMsg');
+					msg.style.display = 'block';
+					msg.querySelector('p').innerHTML =
+						lang === 'ru'
+							? `Спасибо, ${name}!<br>Ваш ответ принят. До встречи на торжестве!`
+							: `Рахмет, ${name}!<br>Жауабыңыз қабылданды. Тойда кездесеміз!`;
+				})
+				.catch(error => {
+					console.error('Error:', error);
+					alert('Ошибка при отправке. Попробуйте еще раз.');
+					btn.disabled = false;
+					btn.textContent = 'Жіберу';
+				});
+		});
+
+    // ── ANIMATION ENGINE ──────────────────────────────────
+    /**
+     * Triggers [data-anim] elements by adding .animated class.
+     * JS sets CSS custom property --d (delay in ms) from data-d attribute.
+     */
+    function revealElements(container) {
+      container.querySelectorAll('[data-anim]').forEach(el => {
+        el.style.setProperty('--d', (el.dataset.d || '0') + 'ms');
+        // Double rAF ensures initial opacity:0 state is painted before animation starts
+        requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('animated')));
+      });
+    }
+
+    // Hero — triggered after fonts + images ready (not scroll)
+    function revealHero() {
+      revealElements(document.querySelector('.hero'));
+    }
+
+    // Scroll-triggered sections
+    const sectionObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        revealElements(entry.target);
+        sectionObs.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('[data-section]').forEach(s => sectionObs.observe(s));
+
+    // ── FONT + IMAGE PRELOAD GATE ─────────────────────────
+    /**
+     * Wait for:
+     *  1. document.fonts.ready  — Kaligrafic & Google Fonts loaded
+     *  2. Background image decoded
+     * Max wait: 2000ms — then show anyway (fallback)
+     */
+    const bgImage = new Image();
+    bgImage.src = 'assets/images/pexels-marina-zasorina-7717488.jpg';
+
+    const fontsReady   = document.fonts.ready;
+    const imageReady   = bgImage.decode ? bgImage.decode().catch(() => {}) : Promise.resolve();
+    const timeout      = new Promise(r => setTimeout(r, 2000));
+
+    Promise.race([
+      Promise.all([fontsReady, imageReady]),
+      timeout
+    ]).then(() => {
+      document.body.classList.add('ready');  // body opacity: 0 → 1
+      revealHero();                          // start hero animations
+    });
+  </script>
+</body>
+</html>
