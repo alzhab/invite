@@ -308,7 +308,6 @@ body::before {
 .location-wrap {
   padding: 20px 28px 64px;
   margin: 0 auto;
-  max-width: 420px;
   position: relative;
 }
 .pearl-scatter {
