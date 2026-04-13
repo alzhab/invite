@@ -29,7 +29,7 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: url('assets/images/pexels-marina-zasorina-7717488.jpg') center / cover;
+  background: url('assets/images/pexels-marina-zasorina-7717488.jpg?v=1.0.1') center / cover;
   z-index: -1;
 }
 
