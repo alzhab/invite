@@ -9,7 +9,7 @@
 
 :root {
   --dark:     #1C1008;
-  --espresso: #4a3828;
+  --espresso: #6b4c30;
   --cream:    rgba(250, 246, 232, 0.93);
 }
 
@@ -89,6 +89,15 @@ body::before {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-arch img:first-child {
+  position: absolute;
+  width: min(100%, 300px);
+  top: 0;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .rose-arch {
@@ -309,6 +318,7 @@ body::before {
   padding: 20px 28px 64px;
   margin: 0 auto;
   position: relative;
+  max-width: 480px;
 }
 .pearl-scatter {
   position: absolute;
