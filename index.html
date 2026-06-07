@@ -17,7 +17,7 @@
         imagesrcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lobster&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2.0.4" />
+  <link rel="stylesheet" href="style.css?v=2.1.0" />
 </head>
 <body>
 
@@ -519,10 +519,8 @@
       else { tryPlay(); }
     });
 
-    // Десктоп: автоплей при загрузке
     window.addEventListener('load', tryPlay);
 
-    // iOS: разблокировка при первом касании (touchstart не конфликтует с кликом по кнопке)
     document.addEventListener('touchstart', function unlock() {
       if (!playing) tryPlay();
     }, { once: true });
