@@ -142,10 +142,10 @@ body.ready {
 
 .hero-background-top {
   position: absolute;
-  left: -48%;
+  left: -38%;
   right: auto;
   top: 0;
-  width: 148%;
+  width: 130%;
 }
 
 .hero-background-bottom {
@@ -153,7 +153,7 @@ body.ready {
   left: -5%;
   right: auto;
   bottom: 0;
-  width: 175%;
+  width: 155%;
 }
 
 .hero::before {
@@ -290,13 +290,18 @@ body.ready {
   margin-bottom: 36px;
 }
 
+#greeting-general {
+  font-size: 28px;
+}
+
 .invite-pre {
   font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(9px, 2.6vw, 11px);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--dark);
+  opacity: 1;
   margin-bottom: 20px;
 }
 
@@ -313,11 +318,12 @@ body.ready {
 .invite-body-text {
   font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(10px, 2.8vw, 12px);
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 2.2;
   color: var(--dark);
+  opacity: 1;
   margin-bottom: 48px;
 }
 
@@ -604,6 +610,14 @@ body.ready {
   overflow: hidden;
   margin-bottom: 24px;
   border: 1px solid rgba(201, 168, 100, 0.25);
+  position: relative;
+}
+
+.map-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: pointer;
 }
 
 .map-embed iframe {
@@ -667,10 +681,10 @@ body.ready {
   display: block;
   font-family: 'Cormorant Garamond', sans-serif;
   font-size: 9px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--dark);
   margin-bottom: 12px;
 }
 
@@ -701,7 +715,8 @@ body.ready {
   font-size: 8px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--dark);
+  opacity: 0.7;
   line-height: 1.9;
   text-align: center;
   margin-top: -10px;
@@ -751,12 +766,14 @@ body.ready {
   font-size: clamp(10px, 2.8vw, 12px);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
-  transition: color 0.2s;
+  color: var(--dark);
+  opacity: 0.75;
+  transition: color 0.2s, opacity 0.2s;
 }
 
 .radio-opt.selected .radio-text {
   color: var(--dark);
+  opacity: 1;
 }
 
 /* Guest counter */
@@ -821,12 +838,17 @@ body.ready {
 }
 
 .submit-btn:hover {
-  background: var(--gold2);
+  background: var(--purple);
 }
 
 .submit-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+.success-img {
+  width: 130%;
+  max-width: 60px;
 }
 
 .success-msg {
@@ -1069,6 +1091,10 @@ body.ready {
     margin-bottom: 44px;
   }
 
+  #greeting-general {
+    font-size: clamp(28px, 3.5vw, 44px);
+  }
+
   .invite-pre {
     font-size: 13px;
     margin-bottom: 24px;
@@ -1206,6 +1232,10 @@ body.ready {
 
   .invite-greeting {
     font-size: clamp(26px, 2.6vw, 42px);
+  }
+
+  #greeting-general {
+    font-size: clamp(30px, 3vw, 48px);
   }
 
   .invite-name {

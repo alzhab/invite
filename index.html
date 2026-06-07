@@ -19,7 +19,7 @@
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:wght@400;500;600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2.1.8"/>
+  <link rel="stylesheet" href="style.css?v=2.2.2"/>
 </head>
 <body>
 
@@ -163,10 +163,12 @@
 
   <div class="map-embed" data-anim="fade" data-d="460">
     <iframe
-      src="https://maps.google.com/maps?q=43.228066,76.851485&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      width="100%" height="240" frameborder="0" allowfullscreen
+      src="https://maps.google.com/maps?q=Райский+сад,+Хан-Тенгри+126,+Алматы&t=&z=16&ie=UTF8&iwloc=&output=embed"
+      width="100%" height="240" frameborder="0"
       loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-      title="Райский сад"></iframe>
+      title="Райский сад" style="pointer-events:none"></iframe>
+    <a class="map-overlay" href="https://2gis.kz/almaty/firm/70000001027755691"
+       target="_blank" rel="noopener" aria-label="Открыть в 2GIS"></a>
   </div>
 
   <a class="map-btn" data-anim="scale" data-d="560"
@@ -254,8 +256,11 @@
   </form>
 
   <div class="success-msg" id="successMsg">
-    <div class="success-icon">🌸</div>
-    <p>Рахмет!<br>Жауабыңыз қабылданды. Тойда кездесеміз!</p>
+    <div class="success-icon">
+      <img class="success-img" src="assets/images/success.png">
+    </div>
+    <p data-kk="Рахмет!<br>Жауабыңыз қабылданды"
+       data-ru="Спасибо!Ваш ответ принят">Рахмет!<br>Жауабыңыз қабылданды. Тойда кездесеміз!</p>
   </div>
 </section>
 
@@ -449,8 +454,8 @@
 				msg.style.display = 'block'
 				msg.querySelector('p').innerHTML =
 					lang === 'ru'
-						? `Спасибо, ${name}!<br>Ваш ответ принят. До встречи на торжестве!`
-						: `Рахмет, ${name}!<br>Жауабыңыз қабылданды. Тойда кездесеміз!`
+						? `Спасибо, ${name}!<br>Ваш ответ принят.`
+						: `Рахмет, ${name}!<br>Жауабыңыз қабылданды.`
 			})
 			.catch(error => {
 				console.error('Error:', error)
