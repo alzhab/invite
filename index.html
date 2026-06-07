@@ -8,21 +8,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" type="image/x-icon" href="./favicon.ico?">
-  <link rel="preload" href="assets/fonts/ceremoniousone.ttf" as="font" type="font/ttf" crossorigin />
-  <link rel="preload" href="assets/fonts/MarggraffKursivZarte.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/fonts/13_English_Script.ttf" as="font" type="font/ttf" crossorigin />
   <link rel="preload" href="assets/images/hero-background-top.webp"
         as="image" type="image/webp"
         imagesrcset="assets/images/hero-background-top.webp 1x, assets/images/hero-background-top@2x.webp 2x, assets/images/hero-background-top@3x.webp 3x" />
   <link rel="preload" href="assets/images/hero-background-bottom.webp"
         as="image" type="image/webp"
         imagesrcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Caveat:wght@400..700&family=Kurale&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lobster&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2.0.3" />
+  <link rel="stylesheet" href="style.css?v=2.0.4" />
 </head>
 <body>
+
+  <audio id="bgMusic" src="assets/music/track.mp3" loop preload="auto"></audio>
+
+  <button class="music-btn is-playing" id="musicBtn" aria-label="Toggle music">
+    <svg class="music-icon-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+    </svg>
+    <svg class="music-icon-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+      <line x1="2" y1="2" x2="22" y2="22"/>
+    </svg>
+  </button>
 
   <div class="lang-switcher">
     <button class="lang-btn active" id="btn-kk" onclick="setLang('kk')">ҚАЗ</button>
@@ -41,7 +50,7 @@
       <p class="hero-event" data-anim="fade" data-d="400"
          data-kk="ҚЫЗ ҰЗАТУ" data-ru="ҚЫЗ ҰЗАТУ">ҚЫЗ ҰЗАТУ</p>
       <div class="hero-rule" data-anim="fade" data-d="560"></div>
-      <p class="hero-date" data-anim="fade" data-d="660">02 · 08 · 2026</p>
+      <p class="hero-date" data-anim="fade" data-d="660">01 · 08 · 2026</p>
     </div>
     <picture>
       <source type="image/webp"
@@ -56,19 +65,23 @@
     <p class="invite-greeting"
        data-anim="up" data-d="0"
        data-kk="Құрметті ағайын - туыс, нағашы - жиен, құда - жекжат, дос - жаран, әріптестер."
-       data-ru="ДОРОГИЕ ГОСТИ!">Құрметті ағайын - туыс, нағашы - жиен, құда - жекжат, дос - жаран, әріптестер.</p>
+       data-ru="Уважаемые родственники, сваты, друзья и коллеги!">Құрметті
+      <br /> ағайын - туыс, нағашы - жиен, құда - жекжат, дос - жаран, әріптестер.</p>
 
     <p class="invite-pre"
        data-anim="fade" data-d="120"
        data-kk="СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ"
-       data-ru="ПРИГЛАШАЕМ ВАС — НАШУ ДОРОГУЮ ДОЧЬ">СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ</p>
+       data-ru="Приглашаем вас стать почётными гостями на торжественном празднике, посвящённом проводам нашей любимой дочери">СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ</p>
 
-    <p class="invite-name" data-anim="scale" data-d="260">Жанельдің</p>
+    <p class="invite-name" data-anim="scale" data-d="260"
+       data-kk="Жанельдің"
+       data-ru="Жанель"
+    >Жанельдің</p>
 
     <p class="invite-body-text"
        data-anim="up" data-d="420"
        data-kk="ұзату тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз."
-       data-ru="на торжественный ужин по случаю проводов просим стать нашим дорогим гостем!">
+       data-ru="Будем счастливы разделить с вами этот особенный и трогательный день.">
       ұзату тойына арналған <br/> салтанатты дастарханымыздың қадірлі <br /> қонағы болуға шақырамыз.
     </p>
 
@@ -77,10 +90,9 @@
       <p class="date-cali-label"
          data-kk="Той салтанаты:"
          data-ru="Торжество состоится:">Той салтанаты:</p>
-      <p class="date-big-num">2</p>
       <p class="date-full-text"
-         data-kk="02 ТАМЫЗ · БАСТАЛУЫ 13:00-ДА"
-         data-ru="02 АВГУСТА · НАЧАЛО В 13:00">02 ТАМЫЗ · БАСТАЛУЫ 13:00-ДА</p>
+         data-kk="01 ТАМЫЗ · БАСТАЛУЫ 13:00-ДА"
+         data-ru="01 АВГУСТА · НАЧАЛО В 13:00">01 ТАМЫЗ<br />БАСТАЛУЫ 13:00-ДА</p>
     </div>
 
     <!-- Mini calendar -->
@@ -92,54 +104,7 @@
     </div>
   </section>
 
-  <!-- ══ COUNTDOWN — white style ══ -->
-  <section class="countdown-section" data-section>
-    <!-- Декоративные конфетти (invite-regards стиль) -->
-    <div class="scatter" aria-hidden="true">
-      <i class="sd" style="--x:6%;  --y:12%; --s:5px; --r:25deg;  --o:.55"></i>
-      <i class="sd" style="--x:18%; --y:5%;  --s:7px; --r:-10deg; --o:.4"></i>
-      <i class="sd" style="--x:33%; --y:18%; --s:4px; --r:50deg;  --o:.5"></i>
-      <i class="sd" style="--x:70%; --y:8%;  --s:6px; --r:-30deg; --o:.45"></i>
-      <i class="sd" style="--x:82%; --y:20%; --s:5px; --r:15deg;  --o:.55"></i>
-      <i class="sd" style="--x:92%; --y:6%;  --s:4px; --r:40deg;  --o:.4"></i>
-      <i class="sd" style="--x:10%; --y:75%; --s:5px; --r:-20deg; --o:.5"></i>
-      <i class="sd" style="--x:45%; --y:85%; --s:7px; --r:35deg;  --o:.4"></i>
-      <i class="sd" style="--x:78%; --y:80%; --s:4px; --r:-45deg; --o:.5"></i>
-      <i class="sd" style="--x:88%; --y:70%; --s:6px; --r:10deg;  --o:.45"></i>
-    </div>
-    <div class="countdown-dots">
-      <span class="cdot"></span><span class="cdot lg"></span><span class="cdot"></span>
-    </div>
-    <p class="cd-about"
-       data-anim="fade" data-d="0"
-       data-kk="ТОЙ ЖАЙЫНДАҒЫ"
-       data-ru="О ТОРЖЕСТВЕ">ТОЙ ЖАЙЫНДАҒЫ</p>
-    <p class="cd-cali-title"
-       data-anim="fade" data-d="120"
-       data-kk="Тойға дейін:"
-       data-ru="До торжества:">Тойға дейін:</p>
-    <div class="cd-grid">
-      <div class="cd-item" data-anim="up" data-d="200">
-        <div class="cd-num" id="cd-days">--</div>
-        <div class="cd-label" data-kk="күн" data-ru="дней">күн</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="260">:</div>
-      <div class="cd-item" data-anim="up" data-d="300">
-        <div class="cd-num" id="cd-hours">--</div>
-        <div class="cd-label" data-kk="сағат" data-ru="часов">сағат</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="360">:</div>
-      <div class="cd-item" data-anim="up" data-d="400">
-        <div class="cd-num" id="cd-mins">--</div>
-        <div class="cd-label" data-kk="минут" data-ru="минут">минут</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="460">:</div>
-      <div class="cd-item" data-anim="up" data-d="500">
-        <div class="cd-num" id="cd-secs">--</div>
-        <div class="cd-label" data-kk="секунд" data-ru="секунд">секунд</div>
-      </div>
-    </div>
-  </section>
+  <div class="divider"></div>
 
   <!-- ══ HOSTS ══ -->
   <section class="hosts-section" data-section>
@@ -153,46 +118,42 @@
       <i class="sd" style="--x:55%; --y:88%; --s:4px; --r:-25deg; --o:.5"></i>
       <i class="sd" style="--x:90%; --y:75%; --s:6px; --r:45deg;  --o:.4"></i>
     </div>
-    <div class="hosts-dots">
-      <span class="cdot"></span><span class="cdot lg"></span><span class="cdot"></span>
-    </div>
     <p class="hosts-label"
        data-anim="fade" data-d="0"
        data-kk="ТОЙ ИЕЛЕРІ:"
        data-ru="ОРГАНИЗАТОР:">ТОЙ ИЕЛЕРІ:</p>
-    <p class="hosts-name" data-anim="up" data-d="160">Алтын</p>
+    <p class="hosts-name" data-anim="up" data-d="160" data-kk=">Алтын, Хамзиндар әулеті"
+       data-ru="Алтын, Семья Хамзиных">Алтын, Хамзиндар әулеті</p>
   </section>
 
   <!-- ══ LOCATION ══ -->
   <section class="location-section" data-section>
-    <img class="loc-floral" src="assets/images/flower.png" alt="">
-    <div class="location-pin" data-anim="fade" data-d="0">♡</div>
     <p class="loc-heading"
        data-anim="up" data-d="120"
        data-kk="МЕКЕН-ЖАЙЫМЫЗ:"
        data-ru="НАШ АДРЕС:">МЕКЕН-ЖАЙЫМЫЗ:</p>
-    <p class="loc-restaurant-cali" data-anim="up" data-d="220">"Louvre Ball Room"</p>
+    <p class="loc-restaurant-cali" data-anim="up" data-d="220">"Райский сад"</p>
     <p class="loc-subtitle"
        data-anim="fade" data-d="300"
        data-kk="МЕЙРАМХАНАСЫ"
        data-ru="РЕСТОРАН">МЕЙРАМХАНАСЫ</p>
     <p class="loc-address"
        data-anim="up" data-d="380"
-       data-kk="АЛМАТЫ ҚАЛАСЫ · РОЗЫБАКИЕВ КӨШЕСІ, 182А"
-       data-ru="Г. АЛМАТЫ · УЛ. РОЗЫБАКИЕВА, 182А">
-      АЛМАТЫ ҚАЛАСЫ · РОЗЫБАКИЕВ КӨШЕСІ, 182А
+       data-kk="АЛМАТЫ · ХАН-ТЕНГРИ М-НЫ, 126"
+       data-ru="Г. АЛМАТЫ · М-Н ХАН-ТЕНГРИ, 126">
+      АЛМАТЫ · ХАН-ТЕНГРИ М-НЫ, 126
     </p>
 
     <div class="map-embed" data-anim="fade" data-d="460">
       <iframe
-        src="https://maps.google.com/maps?q=Louvre+Ball+Room+%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B+%D0%A0%D0%BE%D0%B7%D1%8B%D0%B1%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2+182%D0%B0&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        src="https://maps.google.com/maps?q=43.228066,76.851485&t=&z=15&ie=UTF8&iwloc=&output=embed"
         width="100%" height="240" frameborder="0" allowfullscreen
         loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        title="Louvre Ball Room"></iframe>
+        title="Райский сад"></iframe>
     </div>
 
     <a class="map-btn" data-anim="scale" data-d="560"
-       href="https://go.2gis.com/KzjMl" target="_blank" rel="noopener">
+       href="https://2gis.kz/almaty/firm/70000001027755691" target="_blank" rel="noopener">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
            stroke="currentColor" stroke-width="2">
         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -280,12 +241,55 @@
     </div>
   </section>
 
+  <!-- ══ COUNTDOWN — white style ══ -->
+  <section class="countdown-section" data-section>
+    <!-- Декоративные конфетти (invite-regards стиль) -->
+    <div class="scatter" aria-hidden="true">
+      <i class="sd" style="--x:6%;  --y:12%; --s:5px; --r:25deg;  --o:.55"></i>
+      <i class="sd" style="--x:18%; --y:5%;  --s:7px; --r:-10deg; --o:.4"></i>
+      <i class="sd" style="--x:33%; --y:18%; --s:4px; --r:50deg;  --o:.5"></i>
+      <i class="sd" style="--x:70%; --y:8%;  --s:6px; --r:-30deg; --o:.45"></i>
+      <i class="sd" style="--x:82%; --y:20%; --s:5px; --r:15deg;  --o:.55"></i>
+      <i class="sd" style="--x:92%; --y:6%;  --s:4px; --r:40deg;  --o:.4"></i>
+      <i class="sd" style="--x:10%; --y:75%; --s:5px; --r:-20deg; --o:.5"></i>
+      <i class="sd" style="--x:45%; --y:85%; --s:7px; --r:35deg;  --o:.4"></i>
+      <i class="sd" style="--x:78%; --y:80%; --s:4px; --r:-45deg; --o:.5"></i>
+      <i class="sd" style="--x:88%; --y:70%; --s:6px; --r:10deg;  --o:.45"></i>
+    </div>
+    <p class="cd-cali-title"
+       data-anim="fade" data-d="120"
+       data-kk="Тойға дейін:"
+       data-ru="До торжества:">Тойға дейін:</p>
+    <div class="cd-grid">
+      <div class="cd-item" data-anim="up" data-d="200">
+        <div class="cd-num" id="cd-days">--</div>
+        <div class="cd-label" data-kk="күн" data-ru="дней">күн</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="260">:</div>
+      <div class="cd-item" data-anim="up" data-d="300">
+        <div class="cd-num" id="cd-hours">--</div>
+        <div class="cd-label" data-kk="сағат" data-ru="часов">сағат</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="360">:</div>
+      <div class="cd-item" data-anim="up" data-d="400">
+        <div class="cd-num" id="cd-mins">--</div>
+        <div class="cd-label" data-kk="минут" data-ru="минут">минут</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="460">:</div>
+      <div class="cd-item" data-anim="up" data-d="500">
+        <div class="cd-num" id="cd-secs">--</div>
+        <div class="cd-label" data-kk="секунд" data-ru="секунд">секунд</div>
+      </div>
+    </div>
+  </section>
+
   <!-- ══ FOOTER ══ -->
   <footer class="footer" data-section>
-    <img class="footer-floral" src="assets/images/flower.png" alt="">
-    <p data-anim="fade" data-d="0"
-       data-kk="ЖАНЕЛЬ · 02 ТАМЫЗ 2026"
-       data-ru="ЖАНЕЛЬ · 02 АВГУСТА 2026">ЖАНЕЛЬ · 02 ТАМЫЗ 2026</p>
+    <picture>
+      <source type="image/webp"
+              srcset="assets/images/footer.webp 1x, assets/images/footer@2x.webp 2x, assets/images/footer@3x.webp 3x">
+      <img src="assets/images/footer.png" alt="" class="footer-img">
+    </picture>
   </footer>
 
   <script>
@@ -320,14 +324,14 @@
       }
       for (let d = 1; d <= 31; d++) {
         const el = document.createElement('div');
-        el.className = 'cal-day' + (d === 2 ? ' highlight' : '');
+        el.className = 'cal-day' + (d === 1 ? ' highlight' : '');
         el.textContent = d;
         grid.appendChild(el);
       }
     })();
 
     // ── COUNTDOWN ────────────────────────────────────────
-    const TARGET = new Date('2026-08-02T13:00:00+06:00');
+    const TARGET = new Date('2026-08-01T13:00:00+06:00');
     function pad(n) { return String(n).padStart(2, '0'); }
     function tick() {
       const diff = TARGET - Date.now();
@@ -493,6 +497,37 @@
     Promise.race([Promise.all([fontsReady, imagesReady]), timeout]).then(() => {
       document.body.classList.add('ready');
       revealHero();
+    });
+
+    // ── MUSIC ─────────────────────────────────────────────
+    const audio    = document.getElementById('bgMusic');
+    const musicBtn = document.getElementById('musicBtn');
+    let playing = false;
+
+    function setPlaying(val) {
+      playing = val;
+      musicBtn.classList.toggle('is-playing', val);
+    }
+
+    function tryPlay() {
+      audio.volume = 0.35;
+      audio.play().then(() => setPlaying(true)).catch(() => {});
+    }
+
+    musicBtn.addEventListener('click', () => {
+      if (playing) { audio.pause(); setPlaying(false); }
+      else { tryPlay(); }
+    });
+
+    window.addEventListener('load', () => {
+      tryPlay();
+      const unlock = () => {
+        if (!playing) tryPlay();
+        document.removeEventListener('touchstart', unlock);
+        document.removeEventListener('click', unlock);
+      };
+      document.addEventListener('touchstart', unlock, { once: true });
+      document.addEventListener('click', unlock, { once: true });
     });
   </script>
 </body>

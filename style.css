@@ -6,13 +6,13 @@
 
 @font-face {
   font-family: Kaligrafic;
-  src: url('./assets/fonts/MarggraffKursivZarte.ttf') format('truetype');
+  src: url('./assets/fonts/13_English_Script.ttf') format('truetype');
   font-display: block;
   font-style: normal;
 }
 
 :root {
-  --bg: #FDFAF6;
+  --bg: #fffaf9;
   --dark: #87776b;
   --gold: #C9A864;
   --gold2: #A8832A;
@@ -39,6 +39,31 @@ body.ready {
   opacity: 1;
 }
 
+/* MUSIC BUTTON */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 16px;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 100, 0.35);
+  background: rgba(253, 250, 246, 0.88);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.music-btn:hover { opacity: 1; }
+.music-icon-off  { display: none; }
+.music-btn.is-playing .music-icon-on  { display: none; }
+.music-btn.is-playing .music-icon-off { display: block; }
+
 /* LANG SWITCHER */
 .lang-switcher {
   position: fixed;
@@ -58,7 +83,7 @@ body.ready {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -101,6 +126,30 @@ body.ready {
   right: 0;
   bottom: 0;
   width: 100%;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7%;
+  background: linear-gradient(to top, transparent 20%, var(--bg) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 7%;
+  background: linear-gradient(to bottom, transparent 20%, var(--bg) 100%);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .hero-floral {
@@ -154,7 +203,7 @@ body.ready {
 }
 
 .hero-event {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(13px, 3.8vw, 18px);
   font-weight: 400;
   letter-spacing: 0.38em;
@@ -185,7 +234,7 @@ body.ready {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(10px, 2.8vw, 13px);
   font-weight: 500;
   letter-spacing: 0.28em;
@@ -204,23 +253,22 @@ body.ready {
 }
 
 .invite-greeting {
-  font-family: 'Montserrat', sans-serif;
-  font-size: clamp(11px, 3.2vw, 14px);
+  font-family: 'Kaligrafic', cursive;
+  font-size: 29px;
   font-weight: 500;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
+  letter-spacing: 0.15em;
   color: var(--dark);
   margin-bottom: 36px;
 }
 
 .invite-pre {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(9px, 2.6vw, 11px);
   font-weight: 400;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 2px;
+  color: var(--dark);
+  margin-bottom: 20px;
 }
 
 .invite-name {
@@ -234,7 +282,7 @@ body.ready {
 }
 
 .invite-body-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(10px, 2.8vw, 12px);
   font-weight: 400;
   letter-spacing: 0.18em;
@@ -247,9 +295,7 @@ body.ready {
 /* Date display */
 .date-display {
   border-top: 1px solid rgba(201, 168, 100, 0.35);
-  border-bottom: 1px solid rgba(201, 168, 100, 0.35);
   padding: 28px 0;
-  margin-bottom: 36px;
 }
 
 .date-cali-label {
@@ -257,7 +303,7 @@ body.ready {
   font-size: clamp(22px, 7vw, 34px);
   color: var(--dark);
   opacity: 0.7;
-  margin-bottom: 4px;
+  margin-bottom: 10px;
   font-style: italic;
 }
 
@@ -272,11 +318,11 @@ body.ready {
 
 .date-full-text {
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(9px, 2.6vw, 11px);
-  font-weight: 500;
-  letter-spacing: 0.28em;
+  font-size: clamp(14px, 4.2vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--dark);
 }
 
 /* Calendar */
@@ -288,7 +334,7 @@ body.ready {
 }
 
 .cal-month {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 4px;
@@ -305,7 +351,7 @@ body.ready {
 }
 
 .cal-dow {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(7px, 2vw, 9px);
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -369,7 +415,7 @@ body.ready {
 }
 
 .cd-about {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.32em;
@@ -415,7 +461,7 @@ body.ready {
 }
 
 .cd-label {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(7px, 1.8vw, 9px);
   letter-spacing: 0.18em;
   text-transform: lowercase;
@@ -440,14 +486,20 @@ body.ready {
   position: relative;
 }
 
+.divider {
+  border-top: 1px solid rgba(201, 168, 100, 0.35);
+  max-width: 80%;
+  margin: 0 auto;
+}
+
 .hosts-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.38em;
+  font-size: clamp(11px, 3vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 8px;
+  color: var(--gold2);
+  margin-bottom: 10px;
 }
 
 .hosts-name {
@@ -481,7 +533,7 @@ body.ready {
 }
 
 .loc-heading {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.38em;
@@ -499,7 +551,7 @@ body.ready {
 }
 
 .loc-subtitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(10px, 2.8vw, 13px);
   font-weight: 500;
   letter-spacing: 0.32em;
@@ -509,7 +561,7 @@ body.ready {
 }
 
 .loc-address {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(8px, 2.2vw, 10px);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -541,7 +593,7 @@ body.ready {
   background: var(--dark);
   color: #fff;
   border-radius: 50px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.28em;
@@ -567,7 +619,7 @@ body.ready {
 }
 
 .rsvp-heading {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(10px, 2.8vw, 12px);
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -586,7 +638,7 @@ body.ready {
 
 .form-label {
   display: block;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.28em;
@@ -618,7 +670,7 @@ body.ready {
 }
 
 .form-note {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: 8px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -668,7 +720,7 @@ body.ready {
 }
 
 .radio-text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Cormorant Garamond', sans-serif;
   font-size: clamp(10px, 2.8vw, 12px);
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -838,26 +890,28 @@ body.ready {
 
 /* ══ FOOTER ══ */
 .footer {
-  background: #b7aaa8;
-  padding: 16px 28px 52px;
-  text-align: center;
+  width: 100%;
   position: relative;
+  z-index: 1;
+  line-height: 0;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 52%;
+  background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
+  pointer-events: none;
   z-index: 1;
 }
 
-.footer-floral {
-  width: clamp(120px, 38vw, 180px);
-  margin: 0 auto 16px;
+.footer-img {
+  width: 100%;
+  height: auto;
   display: block;
-}
-
-.footer p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 /* =============================================
