@@ -260,9 +260,9 @@
       <img class="success-img" src="assets/images/success.png">
     </div>
     <p data-kk="Рахмет! Жауабыңыз қабылданды"
-       data-ru="d! Ваш ответ принят</p>
-  </!iv>
-/section>
+       data-ru="Спасибо! Ваш ответ принят">Рахмет! Жауабыңыз қабылданды</p>
+  </div>
+</section>
 
 <section class="celebrating">
   <p class="celebrating-text"
@@ -452,10 +452,10 @@
 				document.getElementById('rsvpForm').style.display = 'none'
 				const msg = document.getElementById('successMsg')
 				msg.style.display = 'block'
-				msg.querySelector('p').innerHTML =
-					lang === 'ru'
-						? `d! Ваш ответ принят`
-						: `Рахмет! Жауабыңыз қабылданды`
+				const p = msg.querySelector('p')
+				p.dataset.kk = `Рахмет ${name}! Жауабыңыз қабылданды`
+				p.dataset.ru = `Спасибо ${name}! Ваш ответ принят`
+				p.textContent = lang === 'ru' ? p.dataset.ru : p.dataset.kk
 			})
 			.catch(error => {
 				console.error('Error:', error)
