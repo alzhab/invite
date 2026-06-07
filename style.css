@@ -142,10 +142,10 @@ body.ready {
 
 .hero-background-top {
   position: absolute;
-  left: -38%;
+  left: -30%;
   right: auto;
   top: 0;
-  width: 130%;
+  width: 120%;
 }
 
 .hero-background-bottom {
@@ -153,7 +153,7 @@ body.ready {
   left: -5%;
   right: auto;
   bottom: 0;
-  width: 155%;
+  width: 145%;
 }
 
 .hero::before {
