@@ -1,529 +1,584 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Жанель - Қыз ұзату той</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link rel="icon" type="image/x-icon" href="./favicon.ico?">
-  <link rel="preload" href="assets/fonts/13_English_Script.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/fonts/13_English_Script.ttf" as="font" type="font/ttf" crossorigin/>
   <link rel="preload" href="assets/images/hero-background-top.webp"
         as="image" type="image/webp"
-        imagesrcset="assets/images/hero-background-top.webp 1x, assets/images/hero-background-top@2x.webp 2x, assets/images/hero-background-top@3x.webp 3x" />
+        imagesrcset="assets/images/hero-background-top.webp 1x, assets/images/hero-background-top@2x.webp 2x, assets/images/hero-background-top@3x.webp 3x"/>
   <link rel="preload" href="assets/images/hero-background-bottom.webp"
         as="image" type="image/webp"
-        imagesrcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Lobster&display=swap" rel="stylesheet">
+        imagesrcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=2.1.0" />
+  <link rel="stylesheet" href="style.css?v=2.1.8"/>
 </head>
 <body>
 
-  <audio id="bgMusic" src="assets/music/track.mp3" loop preload="auto"></audio>
+<audio id="bgMusic" src="assets/music/track.mp3" loop preload="auto"></audio>
 
-  <button class="music-btn" id="musicBtn" aria-label="Toggle music">
-    <svg class="music-icon-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-    </svg>
-    <svg class="music-icon-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
-      <line x1="2" y1="2" x2="22" y2="22"/>
-    </svg>
-  </button>
 
-  <div class="lang-switcher">
-    <button class="lang-btn active" id="btn-kk" onclick="setLang('kk')">ҚАЗ</button>
-    <button class="lang-btn"        id="btn-ru" onclick="setLang('ru')">РУС</button>
+<button class="music-btn" id="musicBtn" aria-label="Toggle music">
+  <svg class="music-icon-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13"/>
+    <circle cx="6" cy="18" r="3"/>
+    <circle cx="18" cy="16" r="3"/>
+  </svg>
+  <svg class="music-icon-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13"/>
+    <circle cx="6" cy="18" r="3"/>
+    <circle cx="18" cy="16" r="3"/>
+    <line x1="2" y1="2" x2="22" y2="22"/>
+  </svg>
+</button>
+
+<div class="lang-switcher">
+  <button class="lang-btn active" id="btn-kk" onclick="setLang('kk')">ҚАЗ</button>
+  <button class="lang-btn" id="btn-ru" onclick="setLang('ru')">РУС</button>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <picture>
+    <source type="image/webp"
+            srcset="assets/images/hero-background-top.webp 1x, assets/images/hero-background-top@2x.webp 2x, assets/images/hero-background-top@3x.webp 3x">
+    <img src="assets/images/hero-background-top.png" alt="" class="hero-background-top">
+  </picture>
+  <div class="hero-inner">
+    <h1 class="hero-name" data-anim="up" data-d="200">Жанель</h1>
+    <p class="hero-event" data-anim="fade" data-d="400"
+       data-kk="ҚЫЗ ҰЗАТУ" data-ru="ҚЫЗ ҰЗАТУ">ҚЫЗ ҰЗАТУ</p>
+    <div class="hero-rule" data-anim="fade" data-d="560"></div>
+    <p class="hero-date" data-anim="fade" data-d="660">01 · 08 · 2026</p>
   </div>
-
-  <!-- ══ HERO ══ -->
-  <section class="hero">
-    <picture>
-      <source type="image/webp"
-              srcset="assets/images/hero-background-top.webp 1x, assets/images/hero-background-top@2x.webp 2x, assets/images/hero-background-top@3x.webp 3x">
-      <img src="assets/images/hero-background-top.png" alt="" class="hero-background-top">
-    </picture>
-    <div class="hero-inner">
-      <h1 class="hero-name" data-anim="up" data-d="200">Жанель</h1>
-      <p class="hero-event" data-anim="fade" data-d="400"
-         data-kk="ҚЫЗ ҰЗАТУ" data-ru="ҚЫЗ ҰЗАТУ">ҚЫЗ ҰЗАТУ</p>
-      <div class="hero-rule" data-anim="fade" data-d="560"></div>
-      <p class="hero-date" data-anim="fade" data-d="660">01 · 08 · 2026</p>
-    </div>
-    <picture>
-      <source type="image/webp"
-              srcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x">
-      <img src="assets/images/hero-background-bottom.png" alt="" class="hero-background-bottom">
-    </picture>
-  </section>
+  <picture>
+    <source type="image/webp"
+            srcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x">
+    <img src="assets/images/hero-background-bottom.png" alt="" class="hero-background-bottom">
+  </picture>
+</section>
 
 
 <!-- ══ INVITATION ══ -->
-  <section class="invite" data-section>
-    <p class="invite-greeting"
-       data-anim="up" data-d="0"
-       data-kk="Құрметті ағайын - туыс, нағашы - жиен, құда - жекжат, дос - жаран, әріптестер."
-       data-ru="Уважаемые родственники, сваты, друзья и коллеги!">Құрметті
-      <br /> ағайын - туыс,<br />нағашы - жиен,<br />құда - жекжат,<br />дос - жаран,<br />әріптестер.</p>
+<section class="invite" data-section>
+  <p id="greeting-general" class="invite-greeting"
+     data-anim="up" data-d="0"
+     data-kk="Құрметті ағайын - туыс, бауырлар, нағашы - жиен, құда - жекжат, дос - жаран, әріптестер."
+     data-ru="Уважаемые родственники, сваты, друзья и коллеги!">Құрметті
+    <br/> ағайын - туыс,<br/>бауырлар,<br/>нағашы - жиен,<br/>құда - жекжат,<br/>дос - жаран,<br/>әріптестер.</p>
 
-    <p class="invite-pre"
-       data-anim="fade" data-d="120"
-       data-kk="СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ"
-       data-ru="Приглашаем вас стать почётными гостями на торжественном празднике, посвящённом проводам нашей любимой дочери">СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ</p>
+  <p id="greeting-personal" class="invite-greeting"
+     data-anim="up" data-d="0"
+     style="display:none">
+    Құрметті<br/>Қонақ!
+  </p>
 
-    <p class="invite-name" data-anim="scale" data-d="260"
-       data-kk="Жанельдің"
-       data-ru="Жанель"
-    >Жанельдің</p>
 
-    <p class="invite-body-text"
-       data-anim="up" data-d="420"
-       data-kk="ұзату тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз."
-       data-ru="Будем счастливы разделить с вами этот особенный и трогательный день.">
-      ұзату тойына арналған <br/> салтанатты дастарханымыздың қадірлі <br /> қонағы болуға шақырамыз.
+  <p class="invite-pre"
+     data-anim="fade" data-d="120"
+     data-kk="СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ"
+     data-ru="Приглашаем вас стать почётными гостями на торжественном празднике, посвящённом проводам нашей любимой дочери">
+    СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ</p>
+
+  <p class="invite-name" data-anim="scale" data-d="260"
+     data-kk="Жанелдің"
+     data-ru="Жанель"
+  >Жанелдің</p>
+
+  <p class="invite-body-text"
+     data-anim="up" data-d="420"
+     data-kk="ұзату тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз."
+     data-ru="Будем счастливы разделить с вами этот особенный и трогательный день.">
+    ұзату тойына арналған <br/> салтанатты дастарханымыздың қадірлі <br/> қонағы болуға шақырамыз.
+  </p>
+
+  <!-- Date display -->
+  <div class="date-display" data-anim="up" data-d="560">
+    <p class="date-cali-label"
+       data-kk="Той салтанаты:"
+       data-ru="Торжество состоится:">Той салтанаты:</p>
+    <p class="date-full-text"
+       data-kk="01 ТАМЫЗ · БАСТАЛУЫ 17:00-ДА"
+       data-ru="01 АВГУСТА · НАЧАЛО В 17:00">01 ТАМЫЗ<br/>БАСТАЛУЫ 17:00-ДА</p>
+  </div>
+
+  <!-- Mini calendar -->
+  <div class="calendar-section" data-anim="up" data-d="680">
+    <p class="cal-month"
+       data-kk="ТАМЫЗ · 2026"
+       data-ru="АВГУСТ · 2026">ТАМЫЗ · 2026</p>
+    <div class="cal-grid" id="calGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ HOSTS ══ -->
+<section class="hosts-section" data-section>
+  <!-- Декоративные конфетти -->
+  <div class="scatter" aria-hidden="true">
+    <i class="sd" style="--x:5%;  --y:15%; --s:6px; --r:-15deg; --o:.5"></i>
+    <i class="sd" style="--x:22%; --y:8%;  --s:4px; --r:40deg;  --o:.45"></i>
+    <i class="sd" style="--x:75%; --y:10%; --s:7px; --r:20deg;  --o:.4"></i>
+    <i class="sd" style="--x:88%; --y:22%; --s:5px; --r:-35deg; --o:.55"></i>
+    <i class="sd" style="--x:12%; --y:80%; --s:5px; --r:30deg;  --o:.45"></i>
+    <i class="sd" style="--x:55%; --y:88%; --s:4px; --r:-25deg; --o:.5"></i>
+    <i class="sd" style="--x:90%; --y:75%; --s:6px; --r:45deg;  --o:.4"></i>
+  </div>
+  <p class="hosts-label"
+     data-anim="fade" data-d="0"
+     data-kk="ТОЙ ИЕЛЕРІ:"
+     data-ru="ОРГАНИЗАТОР:">ТОЙ ИЕЛЕРІ:</p>
+  <p class="hosts-name" data-anim="up" data-d="160" data-kk="Алтын, Хамзиндар әулеті"
+     data-ru="Алтын, Семья Хамзиных">Алтын, Хамзиндар әулеті</p>
+</section>
+
+<!-- ══ LOCATION ══ -->
+<section class="location-section" data-section>
+  <p class="loc-heading"
+     data-anim="up" data-d="120"
+     data-kk="МЕКЕН-ЖАЙЫМЫЗ:"
+     data-ru="НАШ АДРЕС:">МЕКЕН-ЖАЙЫМЫЗ:</p>
+  <p class="loc-restaurant-cali" data-anim="up" data-d="220">"Райский сад"</p>
+  <p class="loc-subtitle"
+     data-anim="fade" data-d="300"
+     data-kk="МЕЙРАМХАНАСЫ"
+     data-ru="РЕСТОРАН">МЕЙРАМХАНАСЫ</p>
+  <p class="loc-address"
+     data-anim="up" data-d="380"
+     data-kk="АЛМАТЫ · ХАН-ТЕНГРИ М-НЫ, 126"
+     data-ru="Г. АЛМАТЫ · М-Н ХАН-ТЕНГРИ, 126">
+    АЛМАТЫ · ХАН-ТЕНГРИ М-НЫ, 126
+  </p>
+
+  <div class="map-embed" data-anim="fade" data-d="460">
+    <iframe
+      src="https://maps.google.com/maps?q=43.228066,76.851485&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      width="100%" height="240" frameborder="0" allowfullscreen
+      loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Райский сад"></iframe>
+  </div>
+
+  <a class="map-btn" data-anim="scale" data-d="560"
+     href="https://2gis.kz/almaty/firm/70000001027755691" target="_blank" rel="noopener">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+      <circle cx="12" cy="9" r="2.5"/>
+    </svg>
+    <span data-kk="РЕСТОРАНДЫ ТАБУ" data-ru="НАЙТИ РЕСТОРАН">РЕСТОРАНДЫ ТАБУ</span>
+  </a>
+</section>
+
+<!-- ══ RSVP ══ -->
+<section class="rsvp" data-section>
+  <p class="rsvp-heading"
+     data-anim="up" data-d="0"
+     data-kk="ТОЙҒА КЕЛЕТІНІҢІЗДІ РАСТАУЫҢЫЗДЫ ӨТІНЕМІЗ:"
+     data-ru="ПРОСИМ ПОДТВЕРДИТЬ ВАШЕ УЧАСТИЕ В ТОРЖЕСТВЕ:">
+    ТОЙҒА КЕЛЕТІНІҢІЗДІ<br>РАСТАУЫҢЫЗДЫ ӨТІНЕМІЗ:
+  </p>
+
+  <form class="rsvp-form" id="rsvpForm" method="POST"
+        action="https://script.google.com/macros/s/AKfycbyaB3w-_gd8ycJqcDJsWIww2di-r9IBzBEU0ISsta2KvkVYC8uggk5fvE4xXbygzV-edg/exec">
+
+    <div data-anim="up" data-d="120">
+      <label class="form-label"
+             data-kk="КЕЛЕСІЗ БЕ?"
+             data-ru="ВЫ ПРИДЁТЕ?">КЕЛЕСІЗ БЕ?</label>
+      <div class="radio-list">
+        <label class="radio-opt" onclick="selectOpt(this,'YES')">
+          <input type="radio" name="attendance" value="YES"/>
+          <div class="radio-circle"></div>
+          <span class="radio-text"
+                data-kk="ИӘ БАРАМЫН"
+                data-ru="ДА, ПРИДУ">ИӘ БАРАМЫН</span>
+        </label>
+        <label class="radio-opt" onclick="selectOpt(this,'PLUS-1')">
+          <input type="radio" name="attendance" value="PLUS-1"/>
+          <div class="radio-circle"></div>
+          <span class="radio-text"
+                data-kk="ЖҰБАЙЫММЕН БАРАМЫН"
+                data-ru="ПРИДУ С СУПРУГОМ/ОЙ">ЖҰБАЙЫММЕН БАРАМЫН</span>
+        </label>
+        <label class="radio-opt" onclick="selectOpt(this,'NO')">
+          <input type="radio" name="attendance" value="NO"/>
+          <div class="radio-circle"></div>
+          <span class="radio-text"
+                data-kk="БАРА АЛМАЙМЫН"
+                data-ru="К СОЖАЛЕНИЮ, НЕ СМОГУ">БАРА АЛМАЙМЫН</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="guest-count-block" data-anim="up" data-d="240">
+      <label class="form-label"
+             data-kk="НЕШЕ АДАМ БОЛЫП КЕЛЕСІЗДЕР?"
+             data-ru="СКОЛЬКО ВАС БУДЕТ?">НЕШЕ АДАМ БОЛЫП КЕЛЕСІЗДЕР?</label>
+      <div class="counter-wrap">
+        <button type="button" class="counter-btn" onclick="changeCount(-1)">−</button>
+        <span class="counter-num" id="guestCountDisplay">1</span>
+        <button type="button" class="counter-btn" onclick="changeCount(1)">+</button>
+        <input type="hidden" id="guestCount" name="guestCount" value="1"/>
+      </div>
+    </div>
+
+    <div data-anim="up" data-d="340">
+      <label class="form-label"
+             data-kk="АТЫ-ЖӨНІҢІЗ:"
+             data-ru="ВАШЕ ИМЯ:">АТЫ-ЖӨНІҢІЗ:</label>
+      <input class="form-input" type="text" id="rsvpName"
+             placeholder="Есімді енгізіңіз…" required name="fullName"/>
+    </div>
+
+    <p class="form-note"
+       data-anim="fade" data-d="420"
+       data-kk="(ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)"
+       data-ru="(ЕСЛИ ПРИДЁТЕ С СУПРУГОМ/ОЙ, ПРОСИМ УКАЗАТЬ ИМЕНА ОБОИХ)">
+      (ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ<br>ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)
     </p>
 
-    <!-- Date display -->
-    <div class="date-display" data-anim="up" data-d="560">
-      <p class="date-cali-label"
-         data-kk="Той салтанаты:"
-         data-ru="Торжество состоится:">Той салтанаты:</p>
-      <p class="date-full-text"
-         data-kk="01 ТАМЫЗ · БАСТАЛУЫ 13:00-ДА"
-         data-ru="01 АВГУСТА · НАЧАЛО В 13:00">01 ТАМЫЗ<br />БАСТАЛУЫ 13:00-ДА</p>
+    <button class="submit-btn" data-anim="scale" data-d="520"
+            type="submit" id="submitBtn">Жіберу
+    </button>
+  </form>
+
+  <div class="success-msg" id="successMsg">
+    <div class="success-icon">🌸</div>
+    <p>Рахмет!<br>Жауабыңыз қабылданды. Тойда кездесеміз!</p>
+  </div>
+</section>
+
+<section class="celebrating">
+  <p class="celebrating-text"
+     data-kk="Қуанышымызға ортақ болыңыздар!"
+     data-ru="Разделите с нами радость!">Қуанышымызға ортақ болыңыздар!</p>
+</section>
+
+<!-- ══ COUNTDOWN — white style ══ -->
+<section class="countdown-section" data-section>
+  <!-- Декоративные конфетти (invite-regards стиль) -->
+  <div class="scatter" aria-hidden="true">
+    <i class="sd" style="--x:6%;  --y:12%; --s:5px; --r:25deg;  --o:.55"></i>
+    <i class="sd" style="--x:18%; --y:5%;  --s:7px; --r:-10deg; --o:.4"></i>
+    <i class="sd" style="--x:33%; --y:18%; --s:4px; --r:50deg;  --o:.5"></i>
+    <i class="sd" style="--x:70%; --y:8%;  --s:6px; --r:-30deg; --o:.45"></i>
+    <i class="sd" style="--x:82%; --y:20%; --s:5px; --r:15deg;  --o:.55"></i>
+    <i class="sd" style="--x:92%; --y:6%;  --s:4px; --r:40deg;  --o:.4"></i>
+    <i class="sd" style="--x:10%; --y:75%; --s:5px; --r:-20deg; --o:.5"></i>
+    <i class="sd" style="--x:45%; --y:85%; --s:7px; --r:35deg;  --o:.4"></i>
+    <i class="sd" style="--x:78%; --y:80%; --s:4px; --r:-45deg; --o:.5"></i>
+    <i class="sd" style="--x:88%; --y:70%; --s:6px; --r:10deg;  --o:.45"></i>
+  </div>
+
+  <p class="cd-cali-title"
+     data-anim="fade" data-d="120"
+     data-kk="Тойға дейін:"
+     data-ru="До торжества:">Тойға дейін:</p>
+  <div class="cd-grid">
+    <div class="cd-item" data-anim="up" data-d="200">
+      <div class="cd-num" id="cd-days">--</div>
+      <div class="cd-label" data-kk="күн" data-ru="дней">күн</div>
     </div>
-
-    <!-- Mini calendar -->
-    <div class="calendar-section" data-anim="up" data-d="680">
-      <p class="cal-month"
-         data-kk="ТАМЫЗ · 2026"
-         data-ru="АВГУСТ · 2026">ТАМЫЗ · 2026</p>
-      <div class="cal-grid" id="calGrid"></div>
+    <div class="cd-sep" data-anim="fade" data-d="260">:</div>
+    <div class="cd-item" data-anim="up" data-d="300">
+      <div class="cd-num" id="cd-hours">--</div>
+      <div class="cd-label" data-kk="сағат" data-ru="часов">сағат</div>
     </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ══ HOSTS ══ -->
-  <section class="hosts-section" data-section>
-    <!-- Декоративные конфетти -->
-    <div class="scatter" aria-hidden="true">
-      <i class="sd" style="--x:5%;  --y:15%; --s:6px; --r:-15deg; --o:.5"></i>
-      <i class="sd" style="--x:22%; --y:8%;  --s:4px; --r:40deg;  --o:.45"></i>
-      <i class="sd" style="--x:75%; --y:10%; --s:7px; --r:20deg;  --o:.4"></i>
-      <i class="sd" style="--x:88%; --y:22%; --s:5px; --r:-35deg; --o:.55"></i>
-      <i class="sd" style="--x:12%; --y:80%; --s:5px; --r:30deg;  --o:.45"></i>
-      <i class="sd" style="--x:55%; --y:88%; --s:4px; --r:-25deg; --o:.5"></i>
-      <i class="sd" style="--x:90%; --y:75%; --s:6px; --r:45deg;  --o:.4"></i>
+    <div class="cd-sep" data-anim="fade" data-d="360">:</div>
+    <div class="cd-item" data-anim="up" data-d="400">
+      <div class="cd-num" id="cd-mins">--</div>
+      <div class="cd-label" data-kk="минут" data-ru="минут">минут</div>
     </div>
-    <p class="hosts-label"
-       data-anim="fade" data-d="0"
-       data-kk="ТОЙ ИЕЛЕРІ:"
-       data-ru="ОРГАНИЗАТОР:">ТОЙ ИЕЛЕРІ:</p>
-    <p class="hosts-name" data-anim="up" data-d="160" data-kk="Алтын, Хамзиндар әулеті"
-       data-ru="Алтын, Семья Хамзиных">Алтын, Хамзиндар әулеті</p>
-  </section>
-
-  <!-- ══ LOCATION ══ -->
-  <section class="location-section" data-section>
-    <p class="loc-heading"
-       data-anim="up" data-d="120"
-       data-kk="МЕКЕН-ЖАЙЫМЫЗ:"
-       data-ru="НАШ АДРЕС:">МЕКЕН-ЖАЙЫМЫЗ:</p>
-    <p class="loc-restaurant-cali" data-anim="up" data-d="220">"Райский сад"</p>
-    <p class="loc-subtitle"
-       data-anim="fade" data-d="300"
-       data-kk="МЕЙРАМХАНАСЫ"
-       data-ru="РЕСТОРАН">МЕЙРАМХАНАСЫ</p>
-    <p class="loc-address"
-       data-anim="up" data-d="380"
-       data-kk="АЛМАТЫ · ХАН-ТЕНГРИ М-НЫ, 126"
-       data-ru="Г. АЛМАТЫ · М-Н ХАН-ТЕНГРИ, 126">
-      АЛМАТЫ · ХАН-ТЕНГРИ М-НЫ, 126
-    </p>
-
-    <div class="map-embed" data-anim="fade" data-d="460">
-      <iframe
-        src="https://maps.google.com/maps?q=43.228066,76.851485&t=&z=15&ie=UTF8&iwloc=&output=embed"
-        width="100%" height="240" frameborder="0" allowfullscreen
-        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-        title="Райский сад"></iframe>
+    <div class="cd-sep" data-anim="fade" data-d="460">:</div>
+    <div class="cd-item" data-anim="up" data-d="500">
+      <div class="cd-num" id="cd-secs">--</div>
+      <div class="cd-label" data-kk="секунд" data-ru="секунд">секунд</div>
     </div>
+  </div>
+</section>
 
-    <a class="map-btn" data-anim="scale" data-d="560"
-       href="https://2gis.kz/almaty/firm/70000001027755691" target="_blank" rel="noopener">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2">
-        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-        <circle cx="12" cy="9" r="2.5"/>
-      </svg>
-      <span data-kk="РЕСТОРАНДЫ ТАБУ" data-ru="НАЙТИ РЕСТОРАН">РЕСТОРАНДЫ ТАБУ</span>
-    </a>
-  </section>
+<!-- ══ FOOTER ══ -->
+<footer class="footer" data-section>
+  <picture>
+    <source type="image/webp"
+            srcset="assets/images/footer.webp 1x, assets/images/footer@2x.webp 2x, assets/images/footer@3x.webp 3x">
+    <img src="assets/images/footer.png" alt="" class="footer-img">
+  </picture>
+</footer>
 
-  <!-- ══ RSVP ══ -->
-  <section class="rsvp" data-section>
-    <p class="rsvp-heading"
-       data-anim="up" data-d="0"
-       data-kk="ТОЙҒА КЕЛЕТІНІҢІЗДІ РАСТАУЫҢЫЗДЫ ӨТІНЕМІЗ:"
-       data-ru="ПРОСИМ ПОДТВЕРДИТЬ ВАШЕ УЧАСТИЕ В ТОРЖЕСТВЕ:">
-      ТОЙҒА КЕЛЕТІНІҢІЗДІ<br>РАСТАУЫҢЫЗДЫ ӨТІНЕМІЗ:
-    </p>
+<script>
+	// ── LANGUAGE ─────────────────────────────────────────
+	let lang = 'kk'
 
-    <form class="rsvp-form" id="rsvpForm" method="POST"
-          action="https://script.google.com/macros/s/AKfycbyaB3w-_gd8ycJqcDJsWIww2di-r9IBzBEU0ISsta2KvkVYC8uggk5fvE4xXbygzV-edg/exec">
+	function setLang(l) {
+		lang = l
+		document.getElementById('btn-kk').classList.toggle('active', l === 'kk')
+		document.getElementById('btn-ru').classList.toggle('active', l === 'ru')
+		document.querySelectorAll('[data-kk]').forEach(el => {
+			el.textContent = l === 'ru' ? el.dataset.ru : el.dataset.kk
+		})
+		document.getElementById('rsvpName').placeholder =
+			l === 'ru' ? 'Введите имя…' : 'Есімді енгізіңіз…'
+		document.getElementById('submitBtn').textContent =
+			l === 'ru' ? 'Отправить' : 'Жіберу'
+		// Персональное приветствие
+		const personal = document.getElementById('greeting-personal')
+		if (personal && personal.dataset.guest) {
+			const g = personal.dataset.guest
+			personal.innerHTML = l === 'ru' ? `Уважаемые<br>${g}!` : `Құрметті<br>${g}!`
+		}
+	}
 
-      <div data-anim="up" data-d="120">
-        <label class="form-label"
-               data-kk="КЕЛЕСІЗ БЕ?"
-               data-ru="ВЫ ПРИДЁТЕ?">КЕЛЕСІЗ БЕ?</label>
-        <div class="radio-list">
-          <label class="radio-opt" onclick="selectOpt(this,'YES')">
-            <input type="radio" name="attendance" value="YES" />
-            <div class="radio-circle"></div>
-            <span class="radio-text"
-                  data-kk="ИӘ БАРАМЫН"
-                  data-ru="ДА, ПРИДУ">ИӘ БАРАМЫН</span>
-          </label>
-          <label class="radio-opt" onclick="selectOpt(this,'PLUS-1')">
-            <input type="radio" name="attendance" value="PLUS-1" />
-            <div class="radio-circle"></div>
-            <span class="radio-text"
-                  data-kk="ЖҰБАЙЫММЕН БАРАМЫН"
-                  data-ru="ПРИДУ С СУПРУГОМ/ОЙ">ЖҰБАЙЫММЕН БАРАМЫН</span>
-          </label>
-          <label class="radio-opt" onclick="selectOpt(this,'NO')">
-            <input type="radio" name="attendance" value="NO" />
-            <div class="radio-circle"></div>
-            <span class="radio-text"
-                  data-kk="БАРА АЛМАЙМЫН"
-                  data-ru="К СОЖАЛЕНИЮ, НЕ СМОГУ">БАРА АЛМАЙМЫН</span>
-          </label>
-        </div>
-      </div>
+	// ── ПЕРСОНАЛИЗАЦИЯ ПО URL ─────────────────────────────
+	;(function () {
+		const guest = new URLSearchParams(location.search).get('guest')
+		if (!guest) return
+		const general  = document.getElementById('greeting-general')
+		const personal = document.getElementById('greeting-personal')
+		if (!general || !personal) return
+		general.style.display       = 'none'
+		personal.style.display      = 'block'
+		personal.dataset.guest      = guest
+		personal.innerHTML          = `Құрметті<br>${guest}!`
+	})()
 
-      <div class="guest-count-block" data-anim="up" data-d="240">
-        <label class="form-label"
-               data-kk="НЕШЕ АДАМ БОЛЫП КЕЛЕСІЗДЕР?"
-               data-ru="СКОЛЬКО ВАС БУДЕТ?">НЕШЕ АДАМ БОЛЫП КЕЛЕСІЗДЕР?</label>
-        <div class="counter-wrap">
-          <button type="button" class="counter-btn" onclick="changeCount(-1)">−</button>
-          <span class="counter-num" id="guestCountDisplay">1</span>
-          <button type="button" class="counter-btn" onclick="changeCount(1)">+</button>
-          <input type="hidden" id="guestCount" name="guestCount" value="1" />
-        </div>
-      </div>
+	// ── CALENDAR ─────────────────────────────────────────
+	;(function () {
+		const grid = document.getElementById('calGrid');
+		['ДС', 'СС', 'СР', 'БС', 'ЖМ', 'СБ', 'ЖС'].forEach(d => {
+			const el = document.createElement('div')
+			el.className = 'cal-dow'
+			el.textContent = d
+			grid.appendChild(el)
+		})
+		for(let i = 0; i < 5; i++) {
+			const el = document.createElement('div')
+			el.className = 'cal-day empty'
+			grid.appendChild(el)
+		}
+		for(let d = 1; d <= 31; d++) {
+			const el = document.createElement('div')
+			el.className = 'cal-day' + (d === 1 ? ' highlight' : '')
+			el.textContent = d
+			grid.appendChild(el)
+		}
+	})()
 
-      <div data-anim="up" data-d="340">
-        <label class="form-label"
-               data-kk="АТЫ-ЖӨНІҢІЗ:"
-               data-ru="ВАШЕ ИМЯ:">АТЫ-ЖӨНІҢІЗ:</label>
-        <input class="form-input" type="text" id="rsvpName"
-               placeholder="Есімді енгізіңіз…" required name="fullName" />
-      </div>
+	// ── COUNTDOWN ────────────────────────────────────────
+	const TARGET = new Date('2026-08-01T17:00:00+06:00')
 
-      <p class="form-note"
-         data-anim="fade" data-d="420"
-         data-kk="(ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)"
-         data-ru="(ЕСЛИ ПРИДЁТЕ С СУПРУГОМ/ОЙ, ПРОСИМ УКАЗАТЬ ИМЕНА ОБОИХ)">
-        (ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ<br>ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)
-      </p>
+	function pad(n) { return String(n).padStart(2, '0') }
 
-      <button class="submit-btn" data-anim="scale" data-d="520"
-              type="submit" id="submitBtn">Жіберу</button>
-    </form>
+	function tick() {
+		const diff = TARGET - Date.now()
+		if (diff <= 0) {
+			['cd-days', 'cd-hours', 'cd-mins', 'cd-secs'].forEach(id =>
+				document.getElementById(id).textContent = '00')
+			return
+		}
+		document.getElementById('cd-days').textContent = pad(Math.floor(diff / 86400000))
+		document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000))
+		document.getElementById('cd-mins').textContent = pad(Math.floor((diff % 3600000) / 60000))
+		document.getElementById('cd-secs').textContent = pad(Math.floor((diff % 60000) / 1000))
+	}
 
-    <div class="success-msg" id="successMsg">
-      <div class="success-icon">🌸</div>
-      <p>Рахмет!<br>Жауабыңыз қабылданды. Тойда кездесеміз!</p>
-    </div>
-  </section>
+	tick()
+	setInterval(tick, 1000)
 
-  <!-- ══ COUNTDOWN — white style ══ -->
-  <section class="countdown-section" data-section>
-    <!-- Декоративные конфетти (invite-regards стиль) -->
-    <div class="scatter" aria-hidden="true">
-      <i class="sd" style="--x:6%;  --y:12%; --s:5px; --r:25deg;  --o:.55"></i>
-      <i class="sd" style="--x:18%; --y:5%;  --s:7px; --r:-10deg; --o:.4"></i>
-      <i class="sd" style="--x:33%; --y:18%; --s:4px; --r:50deg;  --o:.5"></i>
-      <i class="sd" style="--x:70%; --y:8%;  --s:6px; --r:-30deg; --o:.45"></i>
-      <i class="sd" style="--x:82%; --y:20%; --s:5px; --r:15deg;  --o:.55"></i>
-      <i class="sd" style="--x:92%; --y:6%;  --s:4px; --r:40deg;  --o:.4"></i>
-      <i class="sd" style="--x:10%; --y:75%; --s:5px; --r:-20deg; --o:.5"></i>
-      <i class="sd" style="--x:45%; --y:85%; --s:7px; --r:35deg;  --o:.4"></i>
-      <i class="sd" style="--x:78%; --y:80%; --s:4px; --r:-45deg; --o:.5"></i>
-      <i class="sd" style="--x:88%; --y:70%; --s:6px; --r:10deg;  --o:.45"></i>
-    </div>
-    <p class="cd-cali-title"
-       data-anim="fade" data-d="120"
-       data-kk="Тойға дейін:"
-       data-ru="До торжества:">Тойға дейін:</p>
-    <div class="cd-grid">
-      <div class="cd-item" data-anim="up" data-d="200">
-        <div class="cd-num" id="cd-days">--</div>
-        <div class="cd-label" data-kk="күн" data-ru="дней">күн</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="260">:</div>
-      <div class="cd-item" data-anim="up" data-d="300">
-        <div class="cd-num" id="cd-hours">--</div>
-        <div class="cd-label" data-kk="сағат" data-ru="часов">сағат</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="360">:</div>
-      <div class="cd-item" data-anim="up" data-d="400">
-        <div class="cd-num" id="cd-mins">--</div>
-        <div class="cd-label" data-kk="минут" data-ru="минут">минут</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="460">:</div>
-      <div class="cd-item" data-anim="up" data-d="500">
-        <div class="cd-num" id="cd-secs">--</div>
-        <div class="cd-label" data-kk="секунд" data-ru="секунд">секунд</div>
-      </div>
-    </div>
-  </section>
+	// ── GUEST COUNTER ─────────────────────────────────────
+	let guestNum = 1
 
-  <!-- ══ FOOTER ══ -->
-  <footer class="footer" data-section>
-    <picture>
-      <source type="image/webp"
-              srcset="assets/images/footer.webp 1x, assets/images/footer@2x.webp 2x, assets/images/footer@3x.webp 3x">
-      <img src="assets/images/footer.png" alt="" class="footer-img">
-    </picture>
-  </footer>
+	function changeCount(delta) {
+		guestNum = Math.max(1, Math.min(10, guestNum + delta))
+		document.getElementById('guestCountDisplay').textContent = guestNum
+		document.getElementById('guestCount').value = guestNum
+	}
 
-  <script>
-    // ── LANGUAGE ─────────────────────────────────────────
-    let lang = 'kk';
-    function setLang(l) {
-      lang = l;
-      document.getElementById('btn-kk').classList.toggle('active', l === 'kk');
-      document.getElementById('btn-ru').classList.toggle('active', l === 'ru');
-      document.querySelectorAll('[data-kk]').forEach(el => {
-        el.textContent = l === 'ru' ? el.dataset.ru : el.dataset.kk;
-      });
-      document.getElementById('rsvpName').placeholder =
-        l === 'ru' ? 'Введите имя…' : 'Есімді енгізіңіз…';
-      document.getElementById('submitBtn').textContent =
-        l === 'ru' ? 'Отправить' : 'Жіберу';
-    }
+	// ── RADIO ─────────────────────────────────────────────
+	let selectedAttend = null
 
-    // ── CALENDAR ─────────────────────────────────────────
-    (function () {
-      const grid = document.getElementById('calGrid');
-      ['ДС','СС','СР','БС','ЖМ','СБ','ЖС'].forEach(d => {
-        const el = document.createElement('div');
-        el.className = 'cal-dow';
-        el.textContent = d;
-        grid.appendChild(el);
-      });
-      for (let i = 0; i < 5; i++) {
-        const el = document.createElement('div');
-        el.className = 'cal-day empty';
-        grid.appendChild(el);
-      }
-      for (let d = 1; d <= 31; d++) {
-        const el = document.createElement('div');
-        el.className = 'cal-day' + (d === 1 ? ' highlight' : '');
-        el.textContent = d;
-        grid.appendChild(el);
-      }
-    })();
+	function selectOpt(el, val) {
+		document.querySelectorAll('.radio-opt').forEach(o => o.classList.remove('selected'))
+		el.classList.add('selected')
+		selectedAttend = val
+		el.querySelector('input').checked = true
+	}
 
-    // ── COUNTDOWN ────────────────────────────────────────
-    const TARGET = new Date('2026-08-01T13:00:00+06:00');
-    function pad(n) { return String(n).padStart(2, '0'); }
-    function tick() {
-      const diff = TARGET - Date.now();
-      if (diff <= 0) {
-        ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id =>
-          document.getElementById(id).textContent = '00');
-        return;
-      }
-      document.getElementById('cd-days').textContent  = pad(Math.floor(diff / 86400000));
-      document.getElementById('cd-hours').textContent = pad(Math.floor((diff % 86400000) / 3600000));
-      document.getElementById('cd-mins').textContent  = pad(Math.floor((diff % 3600000) / 60000));
-      document.getElementById('cd-secs').textContent  = pad(Math.floor((diff % 60000) / 1000));
-    }
-    tick();
-    setInterval(tick, 1000);
+	// ── FORM SUBMIT ───────────────────────────────────────
+	document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+		e.preventDefault()
 
-    // ── GUEST COUNTER ─────────────────────────────────────
-    let guestNum = 1;
-    function changeCount(delta) {
-      guestNum = Math.max(1, Math.min(10, guestNum + delta));
-      document.getElementById('guestCountDisplay').textContent = guestNum;
-      document.getElementById('guestCount').value = guestNum;
-    }
+		const name = document.getElementById('rsvpName').value.trim()
+		if (!name || !selectedAttend) {
+			alert(lang === 'ru' ? 'Заполните все поля.' : 'Барлық өрістерді толтырыңыз.')
+			return
+		}
 
-    // ── RADIO ─────────────────────────────────────────────
-    let selectedAttend = null;
-    function selectOpt(el, val) {
-      document.querySelectorAll('.radio-opt').forEach(o => o.classList.remove('selected'));
-      el.classList.add('selected');
-      selectedAttend = val;
-      el.querySelector('input').checked = true;
-    }
+		const btn = document.getElementById('submitBtn')
+		const form = e.target
 
-    // ── FORM SUBMIT ───────────────────────────────────────
-    document.getElementById('rsvpForm').addEventListener('submit', function (e) {
-      e.preventDefault();
+		btn.disabled = true
+		btn.textContent = lang === 'ru' ? 'Отправка...' : 'Жіберілуде…'
 
-      const name = document.getElementById('rsvpName').value.trim();
-      if (!name || !selectedAttend) {
-        alert(lang === 'ru' ? 'Заполните все поля.' : 'Барлық өрістерді толтырыңыз.');
-        return;
-      }
+		const formData = new FormData()
+		formData.append('fullName', name)
+		formData.append('attendance', selectedAttend)
+		formData.append('guestCount', guestNum)
+		formData.append('lang', lang)
 
-      const btn = document.getElementById('submitBtn');
-      const form = e.target;
+		fetch(form.action, {
+			method:'POST',
+			body:formData,
+			mode:'no-cors',
+		})
+			.then(() => {
+				document.getElementById('rsvpForm').style.display = 'none'
+				const msg = document.getElementById('successMsg')
+				msg.style.display = 'block'
+				msg.querySelector('p').innerHTML =
+					lang === 'ru'
+						? `Спасибо, ${name}!<br>Ваш ответ принят. До встречи на торжестве!`
+						: `Рахмет, ${name}!<br>Жауабыңыз қабылданды. Тойда кездесеміз!`
+			})
+			.catch(error => {
+				console.error('Error:', error)
+				alert('Ошибка при отправке. Попробуйте еще раз.')
+				btn.disabled = false
+				btn.textContent = lang === 'ru' ? 'Отправить' : 'Жіберу'
+			})
+	})
 
-      btn.disabled = true;
-      btn.textContent = lang === 'ru' ? 'Отправка...' : 'Жіберілуде…';
+	// ── ANIMATION ENGINE ──────────────────────────────────
+	function revealElements(container) {
+		container.querySelectorAll('[data-anim]').forEach(el => {
+			el.style.setProperty('--d', (el.dataset.d || '0') + 'ms')
+			requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('animated')))
+		})
+	}
 
-      const formData = new FormData();
-      formData.append('fullName', name);
-      formData.append('attendance', selectedAttend);
-      formData.append('guestCount', guestNum);
-      formData.append('lang', lang);
+	function revealHero() {
+		revealElements(document.querySelector('.hero'))
+	}
 
-      fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'
-      })
-        .then(() => {
-          document.getElementById('rsvpForm').style.display = 'none';
-          const msg = document.getElementById('successMsg');
-          msg.style.display = 'block';
-          msg.querySelector('p').innerHTML =
-            lang === 'ru'
-              ? `Спасибо, ${name}!<br>Ваш ответ принят. До встречи на торжестве!`
-              : `Рахмет, ${name}!<br>Жауабыңыз қабылданды. Тойда кездесеміз!`;
-        })
-        .catch(error => {
-          console.error('Error:', error);
-          alert('Ошибка при отправке. Попробуйте еще раз.');
-          btn.disabled = false;
-          btn.textContent = lang === 'ru' ? 'Отправить' : 'Жіберу';
-        });
-    });
+	const sectionObs = new IntersectionObserver((entries) => {
+		entries.forEach(entry => {
+			if (!entry.isIntersecting) return
+			revealElements(entry.target)
+			sectionObs.unobserve(entry.target)
+		})
+	}, {threshold:0.08, rootMargin:'0px 0px -40px 0px'})
 
-    // ── ANIMATION ENGINE ──────────────────────────────────
-    function revealElements(container) {
-      container.querySelectorAll('[data-anim]').forEach(el => {
-        el.style.setProperty('--d', (el.dataset.d || '0') + 'ms');
-        requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('animated')));
-      });
-    }
+	document.querySelectorAll('[data-section]').forEach(s => sectionObs.observe(s));
 
-    function revealHero() {
-      revealElements(document.querySelector('.hero'));
-    }
+	// ── FALLING PETALS ───────────────────────────────────
+	;(function () {
+		const layer = document.createElement('div')
+		layer.id = 'petals-layer'
+		document.body.appendChild(layer)
 
-    const sectionObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        revealElements(entry.target);
-        sectionObs.unobserve(entry.target);
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+		// цвета: нежно-розовый, персиковый, золотой, кремовый, мятный
+		const COLORS = ['#f4c2c2', '#f9d5bc', '#c9a864', '#f0e0d0', '#d4e8c4', '#efd5e8']
+		// типы форм: капля, лист, овал
+		const RADIUS = ['50% 50% 50% 0', '60% 0 60% 0', '50%']
+		let active = 0
+		const MAX = 16
 
-    document.querySelectorAll('[data-section]').forEach(s => sectionObs.observe(s));
+		function spawn() {
+			if (active >= MAX) return
+			active++
 
-    // ── FALLING PETALS ───────────────────────────────────
-    (function () {
-      const layer = document.createElement('div');
-      layer.id = 'petals-layer';
-      document.body.appendChild(layer);
+			const el = document.createElement('div')
+			el.className = 'fp'
 
-      // цвета: нежно-розовый, персиковый, золотой, кремовый, мятный
-      const COLORS = ['#f4c2c2','#f9d5bc','#c9a864','#f0e0d0','#d4e8c4','#efd5e8'];
-      // типы форм: капля, лист, овал
-      const RADIUS = ['50% 50% 50% 0','60% 0 60% 0','50%'];
-      let active = 0;
-      const MAX  = 16;
+			const size = 5 + Math.random() * 8
+			const type = Math.floor(Math.random() * 3)
+			const dur = 4.5 + Math.random() * 4
+			const dx = -50 + Math.random() * 100
+			const rot = 300 + Math.random() * 420
 
-      function spawn() {
-        if (active >= MAX) return;
-        active++;
-
-        const el   = document.createElement('div');
-        el.className = 'fp';
-
-        const size = 5 + Math.random() * 8;
-        const type = Math.floor(Math.random() * 3);
-        const dur  = 4.5 + Math.random() * 4;
-        const dx   = -50 + Math.random() * 100;
-        const rot  = 300 + Math.random() * 420;
-
-        el.style.cssText = `
+			el.style.cssText = `
           left:${(Math.random() * 105 - 2)}%;
           width:${size}px;
-          height:${type === 2 ? size : size*(1.3 + Math.random()*0.7)}px;
-          background:${COLORS[Math.floor(Math.random()*COLORS.length)]};
+          height:${type === 2 ? size : size * (1.3 + Math.random() * 0.7)}px;
+          background:${COLORS[Math.floor(Math.random() * COLORS.length)]};
           border-radius:${RADIUS[type]};
           --dx:${dx}px;--rot:${rot}deg;
           animation:fpFall ${dur}s linear forwards;
-        `;
+        `
 
-        layer.appendChild(el);
-        el.addEventListener('animationend', () => { el.remove(); active--; }, { once: true });
-      }
+			layer.appendChild(el)
+			el.addEventListener('animationend', () => {
+				el.remove()
+				active--
+			}, {once:true})
+		}
 
-      // первый залп
-      for (let i = 0; i < 10; i++) setTimeout(spawn, i * 180);
-      // непрерывный поток
-      setInterval(spawn, 380);
-    })();
+		// первый залп
+		for(let i = 0; i < 10; i++) setTimeout(spawn, i * 180)
+		// непрерывный поток
+		setInterval(spawn, 380)
+	})()
 
-    // ── FONT + IMAGE LOAD GATE ────────────────────────────────────
-    function loadImage(src) {
-      return new Promise(resolve => {
-        const img = new Image();
-        img.onload = img.onerror = resolve;
-        img.src = src;
-        if (img.complete) resolve();
-      });
-    }
+	// ── FONT + IMAGE LOAD GATE ────────────────────────────────────
+	function loadImage(src) {
+		return new Promise(resolve => {
+			const img = new Image()
+			img.onload = img.onerror = resolve
+			img.src = src
+			if (img.complete) resolve()
+		})
+	}
 
-    const fontsReady  = document.fonts.ready;
-    const imagesReady = Promise.all([
-      loadImage('assets/images/hero-background-top.webp'),
-      loadImage('assets/images/hero-background-bottom.webp'),
-    ]);
-    const timeout = new Promise(r => setTimeout(r, 3000));
+	const fontsReady = document.fonts.ready
+	const imagesReady = Promise.all([
+		loadImage('assets/images/hero-background-top.webp'),
+		loadImage('assets/images/hero-background-bottom.webp'),
+	])
+	const timeout = new Promise(r => setTimeout(r, 3000))
 
-    Promise.race([Promise.all([fontsReady, imagesReady]), timeout]).then(() => {
-      document.body.classList.add('ready');
-      revealHero();
-    });
+	Promise.race([Promise.all([fontsReady, imagesReady]), timeout]).then(() => {
+		document.body.classList.add('ready')
+		revealHero()
+	})
 
-    // ── MUSIC ─────────────────────────────────────────────
-    const audio    = document.getElementById('bgMusic');
-    const musicBtn = document.getElementById('musicBtn');
-    let playing = false;
+	// ── MUSIC ─────────────────────────────────────────────
+	const audio = document.getElementById('bgMusic')
+	const musicBtn = document.getElementById('musicBtn')
+	let playing = false
 
-    function setPlaying(val) {
-      playing = val;
-      musicBtn.classList.toggle('is-playing', val);
-    }
+	function setPlaying(val) {
+		playing = val
+		musicBtn.classList.toggle('is-playing', val)
+	}
 
-    function tryPlay() {
-      audio.volume = 0.35;
-      audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false));
-    }
+	function tryPlay() {
+		audio.volume = 0.35
+		audio.play().then(() => setPlaying(true)).catch(() => setPlaying(false))
+	}
 
-    musicBtn.addEventListener('click', () => {
-      if (playing) { audio.pause(); setPlaying(false); }
-      else { tryPlay(); }
-    });
+	musicBtn.addEventListener('click', () => {
+		if (playing) {
+			audio.pause()
+			setPlaying(false)
+		} else { tryPlay() }
+	})
 
-    window.addEventListener('load', tryPlay);
+	window.addEventListener('load', tryPlay)
 
-    document.addEventListener('touchstart', function unlock() {
-      if (!playing) tryPlay();
-    }, { once: true });
-  </script>
+	document.addEventListener('touchstart', function unlock() {
+		if (!playing) tryPlay()
+	}, {once:true})
+</script>
 </body>
 </html>
