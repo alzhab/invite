@@ -5,23 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Жанель - Қыз ұзату той</title>
 
-  <!-- DNS prefetch for Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="icon" type="image/x-icon" href="./favicon.ico?">
-
-  <!-- Preload critical local font — prevents layout shift for calligraphy -->
   <link rel="preload" href="assets/fonts/ceremoniousone.ttf" as="font" type="font/ttf" crossorigin />
-
-  <!-- Preload critical images — hero background + rose -->
-  <link rel="preload" href="assets/images/pexels-marina-zasorina-7717488.jpg" as="image" />
-
-  <!-- Google Fonts — display=swap for non-blocking load -->
+  <link rel="preload" href="assets/fonts/MarggraffKursivZarte.ttf" as="font" type="font/ttf" crossorigin />
+  <link rel="preload" href="assets/images/hero-background-top.webp"
+        as="image" type="image/webp"
+        imagesrcset="assets/images/hero-background-top.webp 1x, assets/images/hero-background-top@2x.webp 2x, assets/images/hero-background-top@3x.webp 3x" />
+  <link rel="preload" href="assets/images/hero-background-bottom.webp"
+        as="image" type="image/webp"
+        imagesrcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x" />
   <link
     href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Caveat:wght@400..700&family=Kurale&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=1.0.1" />
+  <link rel="stylesheet" href="style.css?v=2.0.2" />
 </head>
 <body>
 
@@ -32,149 +31,200 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero">
-    <div class="hero-arch" data-anim="scale" data-d="0">
-      <img src="./assets/images/flower.png?v=1.0.1">
-      <div class="arch-inner">
-        <h1  class="arch-name"  data-anim="up"   data-d="280">Жанель</h1>
-        <p   class="arch-event" data-anim="fade" data-d="460"
-             data-kk="ҚЫЗ ҰЗАТУ" data-ru="ҚЫЗ ҰЗАТУ">ҚЫЗ ҰЗАТУ</p>
-        <div class="arch-rule"  data-anim="fade" data-d="580"></div>
-        <p   class="arch-date"  data-anim="up"   data-d="640">02 | 08 | 2026</p>
+    <picture>
+      <source type="image/webp"
+              srcset="assets/images/hero-background-top.webp 1x, assets/images/hero-background-top@2x.webp 2x, assets/images/hero-background-top@3x.webp 3x">
+      <img src="assets/images/hero-background-top.png" alt="" class="hero-background-top">
+    </picture>
+    <div class="hero-inner">
+      <h1 class="hero-name" data-anim="up" data-d="200">Жанель</h1>
+      <p class="hero-event" data-anim="fade" data-d="400"
+         data-kk="ҚЫЗ ҰЗАТУ" data-ru="ҚЫЗ ҰЗАТУ">ҚЫЗ ҰЗАТУ</p>
+      <div class="hero-rule" data-anim="fade" data-d="560"></div>
+      <p class="hero-date" data-anim="fade" data-d="660">02 · 08 · 2026</p>
+    </div>
+    <picture>
+      <source type="image/webp"
+              srcset="assets/images/hero-background-bottom.webp 1x, assets/images/hero-background-bottom@2x.webp 2x, assets/images/hero-background-bottom@3x.webp 3x">
+      <img src="assets/images/hero-background-bottom.png" alt="" class="hero-background-bottom">
+    </picture>
+  </section>
+
+
+<!-- ══ INVITATION ══ -->
+  <section class="invite" data-section>
+    <p class="invite-greeting"
+       data-anim="up" data-d="0"
+       data-kk="Құрметті ағайын - туыс, нағашы - жиен, құда - жекжат, дос - жаран, әріптестер."
+       data-ru="ДОРОГИЕ ГОСТИ!">Құрметті ағайын - туыс, нағашы - жиен, құда - жекжат, дос - жаран, әріптестер.</p>
+
+    <p class="invite-pre"
+       data-anim="fade" data-d="120"
+       data-kk="СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ"
+       data-ru="ПРИГЛАШАЕМ ВАС — НАШУ ДОРОГУЮ ДОЧЬ">СІЗДЕРДІ АЯУЛЫ ҚЫЗЫМЫЗ</p>
+
+    <p class="invite-name" data-anim="scale" data-d="260">Жанельдің</p>
+
+    <p class="invite-body-text"
+       data-anim="up" data-d="420"
+       data-kk="ұзату тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз."
+       data-ru="на торжественный ужин по случаю проводов просим стать нашим дорогим гостем!">
+      ұзату тойына арналған <br/> салтанатты дастарханымыздың қадірлі <br /> қонағы болуға шақырамыз.
+    </p>
+
+    <!-- Date display -->
+    <div class="date-display" data-anim="up" data-d="560">
+      <p class="date-cali-label"
+         data-kk="Той салтанаты:"
+         data-ru="Торжество состоится:">Той салтанаты:</p>
+      <p class="date-big-num">2</p>
+      <p class="date-full-text"
+         data-kk="02 ТАМЫЗ · БАСТАЛУЫ 13:00-ДА"
+         data-ru="02 АВГУСТА · НАЧАЛО В 13:00">02 ТАМЫЗ · БАСТАЛУЫ 13:00-ДА</p>
+    </div>
+
+    <!-- Mini calendar -->
+    <div class="calendar-section" data-anim="up" data-d="680">
+      <p class="cal-month"
+         data-kk="ТАМЫЗ · 2026"
+         data-ru="АВГУСТ · 2026">ТАМЫЗ · 2026</p>
+      <div class="cal-grid" id="calGrid"></div>
+    </div>
+  </section>
+
+  <!-- ══ COUNTDOWN — white style ══ -->
+  <section class="countdown-section" data-section>
+    <!-- Декоративные конфетти (invite-regards стиль) -->
+    <div class="scatter" aria-hidden="true">
+      <i class="sd" style="--x:6%;  --y:12%; --s:5px; --r:25deg;  --o:.55"></i>
+      <i class="sd" style="--x:18%; --y:5%;  --s:7px; --r:-10deg; --o:.4"></i>
+      <i class="sd" style="--x:33%; --y:18%; --s:4px; --r:50deg;  --o:.5"></i>
+      <i class="sd" style="--x:70%; --y:8%;  --s:6px; --r:-30deg; --o:.45"></i>
+      <i class="sd" style="--x:82%; --y:20%; --s:5px; --r:15deg;  --o:.55"></i>
+      <i class="sd" style="--x:92%; --y:6%;  --s:4px; --r:40deg;  --o:.4"></i>
+      <i class="sd" style="--x:10%; --y:75%; --s:5px; --r:-20deg; --o:.5"></i>
+      <i class="sd" style="--x:45%; --y:85%; --s:7px; --r:35deg;  --o:.4"></i>
+      <i class="sd" style="--x:78%; --y:80%; --s:4px; --r:-45deg; --o:.5"></i>
+      <i class="sd" style="--x:88%; --y:70%; --s:6px; --r:10deg;  --o:.45"></i>
+    </div>
+    <div class="countdown-dots">
+      <span class="cdot"></span><span class="cdot lg"></span><span class="cdot"></span>
+    </div>
+    <p class="cd-about"
+       data-anim="fade" data-d="0"
+       data-kk="ТОЙ ЖАЙЫНДАҒЫ"
+       data-ru="О ТОРЖЕСТВЕ">ТОЙ ЖАЙЫНДАҒЫ</p>
+    <p class="cd-cali-title"
+       data-anim="fade" data-d="120"
+       data-kk="Тойға дейін:"
+       data-ru="До торжества:">Тойға дейін:</p>
+    <div class="cd-grid">
+      <div class="cd-item" data-anim="up" data-d="200">
+        <div class="cd-num" id="cd-days">--</div>
+        <div class="cd-label" data-kk="күн" data-ru="дней">күн</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="260">:</div>
+      <div class="cd-item" data-anim="up" data-d="300">
+        <div class="cd-num" id="cd-hours">--</div>
+        <div class="cd-label" data-kk="сағат" data-ru="часов">сағат</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="360">:</div>
+      <div class="cd-item" data-anim="up" data-d="400">
+        <div class="cd-num" id="cd-mins">--</div>
+        <div class="cd-label" data-kk="минут" data-ru="минут">минут</div>
+      </div>
+      <div class="cd-sep" data-anim="fade" data-d="460">:</div>
+      <div class="cd-item" data-anim="up" data-d="500">
+        <div class="cd-num" id="cd-secs">--</div>
+        <div class="cd-label" data-kk="секунд" data-ru="секунд">секунд</div>
       </div>
     </div>
   </section>
 
-  <!-- ══ INVITATION ══ -->
-  <section class="invite" data-section>
-    <p class="invite-greeting"
-       data-anim="up" data-d="0"
-       data-kk="Құрметті қонақтар!"
-       data-ru="Дорогие гости!">Құрметті қонақтар!</p>
-
-    <p class="invite-pre"
-       data-anim="fade" data-d="100"
-       data-kk="Сіздерді аяулы"
-       data-ru="Приглашаем вас">Сіздерді аяулы</p>
-
-    <p class="invite-name" data-anim="scale" data-d="220">Жанель</p>
-
-    <p class="invite-body-text"
-       data-anim="up" data-d="380"
-       data-kk="қызымыздың ұзату тойына арналған салтанатты ас дастарханымыздың қадірлі қонағы болуға шақырамыз!"
-       data-ru="на торжественный ужин по случаю проводов нашей дорогой дочери!">
-      қызымыздың ұзату тойына арналған<br>
-      салтанатты ас дастарханымыздың<br>
-      қадірлі қонағы болуға шақырамыз!
-    </p>
-
-    <div class="pearls-row">
-      <div class="p-bead sm" data-anim="pearl" data-d="480"></div>
-      <div class="p-bead md" data-anim="pearl" data-d="530"></div>
-      <div class="p-bead lg" data-anim="pearl" data-d="580"></div>
-      <div class="p-bead md" data-anim="pearl" data-d="630"></div>
-      <div class="p-bead sm" data-anim="pearl" data-d="680"></div>
-      <div class="p-bead md" data-anim="pearl" data-d="630"></div>
-      <div class="p-bead lg" data-anim="pearl" data-d="580"></div>
-      <div class="p-bead md" data-anim="pearl" data-d="530"></div>
-      <div class="p-bead sm" data-anim="pearl" data-d="480"></div>
+  <!-- ══ HOSTS ══ -->
+  <section class="hosts-section" data-section>
+    <!-- Декоративные конфетти -->
+    <div class="scatter" aria-hidden="true">
+      <i class="sd" style="--x:5%;  --y:15%; --s:6px; --r:-15deg; --o:.5"></i>
+      <i class="sd" style="--x:22%; --y:8%;  --s:4px; --r:40deg;  --o:.45"></i>
+      <i class="sd" style="--x:75%; --y:10%; --s:7px; --r:20deg;  --o:.4"></i>
+      <i class="sd" style="--x:88%; --y:22%; --s:5px; --r:-35deg; --o:.55"></i>
+      <i class="sd" style="--x:12%; --y:80%; --s:5px; --r:30deg;  --o:.45"></i>
+      <i class="sd" style="--x:55%; --y:88%; --s:4px; --r:-25deg; --o:.5"></i>
+      <i class="sd" style="--x:90%; --y:75%; --s:6px; --r:45deg;  --o:.4"></i>
     </div>
-
-    <p class="invite-regards"
-       data-anim="fade" data-d="620"
-       data-kk="күрметпен, Той иесі:"
-       data-ru="с уважением, Организатор:">құрметпен, Той иесі:</p>
-    <p class="invite-host" data-anim="up" data-d="700">Алтын</p>
-
-    <div class="invite-date-block" data-anim="up" data-d="800">
-      <p class="invite-date-label"
-         data-kk="Той салтанаты:"
-         data-ru="Торжество состоится:">Той салтанаты:</p>
-      <p class="invite-date-value"
-         data-kk="02 ТАМЫЗ 2026 ЖЫЛЫ · САҒАТ 13:00"
-         data-ru="02 АВГУСТА 2026 ГОДА · В 13:00">
-        02 ТАМЫЗ 2026 ЖЫЛЫ · САҒАТ 13:00
-      </p>
+    <div class="hosts-dots">
+      <span class="cdot"></span><span class="cdot lg"></span><span class="cdot"></span>
     </div>
-  </section>
-
-  <!-- ══ CALENDAR ══ -->
-  <section class="calendar-section" data-section>
-    <p class="cal-month"
+    <p class="hosts-label"
        data-anim="fade" data-d="0"
-       data-kk="ТАМЫЗ · 2026"
-       data-ru="АВГУСТ · 2026">ТАМЫЗ · 2026</p>
-    <div class="cal-grid" id="calGrid" data-anim="up" data-d="160"></div>
+       data-kk="ТОЙ ИЕЛЕРІ:"
+       data-ru="ОРГАНИЗАТОР:">ТОЙ ИЕЛЕРІ:</p>
+    <p class="hosts-name" data-anim="up" data-d="160">Алтын</p>
   </section>
 
   <!-- ══ LOCATION ══ -->
-  <section class="location-wrap" data-section>
-    <div class="pearl-scatter" data-anim="pearl" data-d="300" style="width:8px;height:8px;top:14px;left:18px;"></div>
-    <div class="pearl-scatter" data-anim="pearl" data-d="360" style="width:12px;height:12px;top:8px;right:40px;"></div>
-    <div class="pearl-scatter" data-anim="pearl" data-d="420" style="width:7px;height:7px;top:30px;right:14px;"></div>
-    <div class="pearl-scatter" data-anim="pearl" data-d="480" style="width:10px;height:10px;bottom:20px;left:10px;"></div>
-    <div class="pearl-scatter" data-anim="pearl" data-d="540" style="width:9px;height:9px;bottom:30px;right:20px;"></div>
-    <div class="location-arch" data-anim="scale" data-d="0">
-      <p class="loc-label"
-         data-anim="up" data-d="220"
-         data-kk="Мекенжай:"
-         data-ru="Адрес:">Мекенжай:</p>
-      <p class="loc-venue"
-         data-anim="up" data-d="320"
-         data-kk="Louvre Ball Room мейрамханасы"
-         data-ru="Ресторан Louvre Ball Room">Louvre Ball Room мейрамханасы</p>
-      <p class="loc-address"
-         data-anim="up" data-d="400"
-         data-kk="Алматы қаласы · Розыбакиев көшесі, 182а"
-         data-ru="г. Алматы · ул. Розыбакиева, 182а">
-        Алматы қаласы · Розыбакиев көшесі, 182а
-      </p>
-      <a class="map-btn" data-anim="fade" data-d="500"
-         href="https://go.2gis.com/KzjMl" target="_blank" rel="noopener">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-          <circle cx="12" cy="9" r="2.5"/>
-        </svg>
-        <span data-kk="КАРТА" data-ru="КАРТА">КАРТА</span>
-      </a>
+  <section class="location-section" data-section>
+    <img class="loc-floral" src="assets/images/flower.png" alt="">
+    <div class="location-pin" data-anim="fade" data-d="0">♡</div>
+    <p class="loc-heading"
+       data-anim="up" data-d="120"
+       data-kk="МЕКЕН-ЖАЙЫМЫЗ:"
+       data-ru="НАШ АДРЕС:">МЕКЕН-ЖАЙЫМЫЗ:</p>
+    <p class="loc-restaurant-cali" data-anim="up" data-d="220">"Louvre Ball Room"</p>
+    <p class="loc-subtitle"
+       data-anim="fade" data-d="300"
+       data-kk="МЕЙРАМХАНАСЫ"
+       data-ru="РЕСТОРАН">МЕЙРАМХАНАСЫ</p>
+    <p class="loc-address"
+       data-anim="up" data-d="380"
+       data-kk="АЛМАТЫ ҚАЛАСЫ · РОЗЫБАКИЕВ КӨШЕСІ, 182А"
+       data-ru="Г. АЛМАТЫ · УЛ. РОЗЫБАКИЕВА, 182А">
+      АЛМАТЫ ҚАЛАСЫ · РОЗЫБАКИЕВ КӨШЕСІ, 182А
+    </p>
+
+    <div class="map-embed" data-anim="fade" data-d="460">
+      <iframe
+        src="https://maps.google.com/maps?q=Louvre+Ball+Room+%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B+%D0%A0%D0%BE%D0%B7%D1%8B%D0%B1%D0%B0%D0%BA%D0%B8%D0%B5%D0%B2+182%D0%B0&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        width="100%" height="240" frameborder="0" allowfullscreen
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Louvre Ball Room"></iframe>
     </div>
+
+    <a class="map-btn" data-anim="scale" data-d="560"
+       href="https://go.2gis.com/KzjMl" target="_blank" rel="noopener">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      <span data-kk="РЕСТОРАНДЫ ТАБУ" data-ru="НАЙТИ РЕСТОРАН">РЕСТОРАНДЫ ТАБУ</span>
+    </a>
   </section>
 
   <!-- ══ RSVP ══ -->
   <section class="rsvp" data-section>
     <p class="rsvp-heading"
        data-anim="up" data-d="0"
-       data-kk="Тойға қатысуыңызды растауыңызды сұраймыз!"
-       data-ru="Просим подтвердить ваше участие в торжестве!">
-      Тойға қатысуыңызды<br>растауыңызды сұраймыз!
+       data-kk="ТОЙҒА КЕЛЕТІНІҢІЗДІ РАСТАУЫҢЫЗДЫ ӨТІНЕМІЗ:"
+       data-ru="ПРОСИМ ПОДТВЕРДИТЬ ВАШЕ УЧАСТИЕ В ТОРЖЕСТВЕ:">
+      ТОЙҒА КЕЛЕТІНІҢІЗДІ<br>РАСТАУЫҢЫЗДЫ ӨТІНЕМІЗ:
     </p>
 
     <form class="rsvp-form" id="rsvpForm" method="POST"
           action="https://script.google.com/macros/s/AKfycbyaB3w-_gd8ycJqcDJsWIww2di-r9IBzBEU0ISsta2KvkVYC8uggk5fvE4xXbygzV-edg/exec">
-      <div data-anim="up" data-d="160">
-        <label class="form-label"
-               data-kk="АТЫ-ЖӨНІҢІЗ:"
-               data-ru="ВАШЕ ИМЯ:">АТЫ-ЖӨНІҢІЗ:</label>
-        <input class="form-input" type="text" id="rsvpName"
-               placeholder="Есімді енгізіңіз…" required name="fullName" />
-      </div>
 
-      <p class="form-note"
-         data-anim="fade" data-d="240"
-         data-kk="(ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)"
-         data-ru="(ЕСЛИ ВЫ ПРИДЁТЕ С СУПРУГОМ/ОЙ, ПРОСИМ УКАЗАТЬ ИМЕНА ОБОИХ)">
-        (ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ<br>ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)
-      </p>
-
-      <div data-anim="up" data-d="320">
+      <div data-anim="up" data-d="120">
         <label class="form-label"
-               data-kk="ҚАТЫСУЫҢЫЗ:"
-               data-ru="ВАШЕ УЧАСТИЕ:">ҚАТЫСУЫҢЫЗ:</label>
+               data-kk="КЕЛЕСІЗ БЕ?"
+               data-ru="ВЫ ПРИДЁТЕ?">КЕЛЕСІЗ БЕ?</label>
         <div class="radio-list">
           <label class="radio-opt" onclick="selectOpt(this,'YES')">
             <input type="radio" name="attendance" value="YES" />
             <div class="radio-circle"></div>
-            <span class="radio-text" data-kk="ҚАТЫСАМЫН" data-ru="ПРИДУ">ҚАТЫСАМЫН</span>
+            <span class="radio-text"
+                  data-kk="ИӘ БАРАМЫН"
+                  data-ru="ДА, ПРИДУ">ИӘ БАРАМЫН</span>
           </label>
           <label class="radio-opt" onclick="selectOpt(this,'PLUS-1')">
             <input type="radio" name="attendance" value="PLUS-1" />
@@ -187,13 +237,40 @@
             <input type="radio" name="attendance" value="NO" />
             <div class="radio-circle"></div>
             <span class="radio-text"
-                  data-kk="ӨКІНІШКЕ ҚАРАЙ, КЕЛЕ АЛМАЙМЫН"
-                  data-ru="К СОЖАЛЕНИЮ, НЕ СМОГУ">ӨКІНІШКЕ ҚАРАЙ, КЕЛЕ АЛМАЙМЫН</span>
+                  data-kk="БАРА АЛМАЙМЫН"
+                  data-ru="К СОЖАЛЕНИЮ, НЕ СМОГУ">БАРА АЛМАЙМЫН</span>
           </label>
         </div>
       </div>
 
-      <button class="submit-btn" data-anim="scale" data-d="460"
+      <div class="guest-count-block" data-anim="up" data-d="240">
+        <label class="form-label"
+               data-kk="НЕШЕ АДАМ БОЛЫП КЕЛЕСІЗДЕР?"
+               data-ru="СКОЛЬКО ВАС БУДЕТ?">НЕШЕ АДАМ БОЛЫП КЕЛЕСІЗДЕР?</label>
+        <div class="counter-wrap">
+          <button type="button" class="counter-btn" onclick="changeCount(-1)">−</button>
+          <span class="counter-num" id="guestCountDisplay">1</span>
+          <button type="button" class="counter-btn" onclick="changeCount(1)">+</button>
+          <input type="hidden" id="guestCount" name="guestCount" value="1" />
+        </div>
+      </div>
+
+      <div data-anim="up" data-d="340">
+        <label class="form-label"
+               data-kk="АТЫ-ЖӨНІҢІЗ:"
+               data-ru="ВАШЕ ИМЯ:">АТЫ-ЖӨНІҢІЗ:</label>
+        <input class="form-input" type="text" id="rsvpName"
+               placeholder="Есімді енгізіңіз…" required name="fullName" />
+      </div>
+
+      <p class="form-note"
+         data-anim="fade" data-d="420"
+         data-kk="(ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)"
+         data-ru="(ЕСЛИ ПРИДЁТЕ С СУПРУГОМ/ОЙ, ПРОСИМ УКАЗАТЬ ИМЕНА ОБОИХ)">
+        (ЖҰБАЙЫҢЫЗБЕН КЕЛЕТІН БОЛСАҢЫЗ, ЕКЕУІҢІЗДІҢ<br>ДЕ ЕСІМДЕРІН ЖАЗУЫҢЫЗДЫ СҰРАЙМЫЗ)
+      </p>
+
+      <button class="submit-btn" data-anim="scale" data-d="520"
               type="submit" id="submitBtn">Жіберу</button>
     </form>
 
@@ -203,36 +280,9 @@
     </div>
   </section>
 
-  <!-- ══ COUNTDOWN — dark, last section ══ -->
-  <section class="countdown" data-section>
-    <p class="cd-title"
-       data-anim="fade" data-d="0"
-       data-kk="ТОЙ САЛТАНАТЫНА ДЕЙІН:"
-       data-ru="ДО ТОРЖЕСТВА ОСТАЛОСЬ:">ТОЙ САЛТАНАТЫНА ДЕЙІН:</p>
-    <div class="cd-grid">
-      <div class="cd-item" data-anim="up" data-d="120">
-        <div class="cd-num" id="cd-days">--</div>
-        <div class="cd-label" data-kk="КҮН" data-ru="ДНЕЙ">КҮН</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="180">·</div>
-      <div class="cd-item" data-anim="up" data-d="220">
-        <div class="cd-num" id="cd-hours">--</div>
-        <div class="cd-label" data-kk="САҒАТ" data-ru="ЧАСОВ">САҒАТ</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="280">·</div>
-      <div class="cd-item" data-anim="up" data-d="320">
-        <div class="cd-num" id="cd-mins">--</div>
-        <div class="cd-label" data-kk="МИНУТ" data-ru="МИНУТ">МИНУТ</div>
-      </div>
-      <div class="cd-sep" data-anim="fade" data-d="380">·</div>
-      <div class="cd-item" data-anim="up" data-d="420">
-        <div class="cd-num" id="cd-secs">--</div>
-        <div class="cd-label" data-kk="СЕКУНД" data-ru="СЕКУНД">СЕКУНД</div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer-dark" data-section>
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" data-section>
+    <img class="footer-floral" src="assets/images/flower.png" alt="">
     <p data-anim="fade" data-d="0"
        data-kk="ЖАНЕЛЬ · 02 ТАМЫЗ 2026"
        data-ru="ЖАНЕЛЬ · 02 АВГУСТА 2026">ЖАНЕЛЬ · 02 ТАМЫЗ 2026</p>
@@ -294,6 +344,14 @@
     tick();
     setInterval(tick, 1000);
 
+    // ── GUEST COUNTER ─────────────────────────────────────
+    let guestNum = 1;
+    function changeCount(delta) {
+      guestNum = Math.max(1, Math.min(10, guestNum + delta));
+      document.getElementById('guestCountDisplay').textContent = guestNum;
+      document.getElementById('guestCount').value = guestNum;
+    }
+
     // ── RADIO ─────────────────────────────────────────────
     let selectedAttend = null;
     function selectOpt(el, val) {
@@ -304,70 +362,61 @@
     }
 
     // ── FORM SUBMIT ───────────────────────────────────────
-		document.getElementById('rsvpForm').addEventListener('submit', function (e) {
-			e.preventDefault();
+    document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+      e.preventDefault();
 
-			const name = document.getElementById('rsvpName').value.trim();
-			// Убедитесь, что переменная selectedAttend у вас определяется в функции selectOpt
-			if (!name || !selectedAttend) {
-				alert(lang === 'ru' ? 'Заполните все поля.' : 'Барлық өрістерді толтырыңыз.');
-				return;
-			}
+      const name = document.getElementById('rsvpName').value.trim();
+      if (!name || !selectedAttend) {
+        alert(lang === 'ru' ? 'Заполните все поля.' : 'Барлық өрістерді толтырыңыз.');
+        return;
+      }
 
-			const btn = document.getElementById('submitBtn');
-			const form = e.target;
+      const btn = document.getElementById('submitBtn');
+      const form = e.target;
 
-			btn.disabled = true;
-			btn.textContent = lang === 'ru' ? 'Отправка...' : 'Жіберілуде…';
+      btn.disabled = true;
+      btn.textContent = lang === 'ru' ? 'Отправка...' : 'Жіберілуде…';
 
-			// Создаем данные для отправки
-			const formData = new FormData();
-			formData.append('fullName', name);
-			formData.append('attendance', selectedAttend);
+      const formData = new FormData();
+      formData.append('fullName', name);
+      formData.append('attendance', selectedAttend);
+      formData.append('guestCount', guestNum);
+      formData.append('lang', lang);
 
-			// ОТПРАВКА В GOOGLE
-			fetch(form.action, {
-				method: 'POST',
-				body: formData,
-				mode: 'no-cors' // Важно для Google Script
-			})
-				.then(() => {
-					// Этот код сработает после успешной отправки
-					document.getElementById('rsvpForm').style.display = 'none';
-					const msg = document.getElementById('successMsg');
-					msg.style.display = 'block';
-					msg.querySelector('p').innerHTML =
-						lang === 'ru'
-							? `Спасибо, ${name}!<br>Ваш ответ принят. До встречи на торжестве!`
-							: `Рахмет, ${name}!<br>Жауабыңыз қабылданды. Тойда кездесеміз!`;
-				})
-				.catch(error => {
-					console.error('Error:', error);
-					alert('Ошибка при отправке. Попробуйте еще раз.');
-					btn.disabled = false;
-					btn.textContent = 'Жіберу';
-				});
-		});
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      })
+        .then(() => {
+          document.getElementById('rsvpForm').style.display = 'none';
+          const msg = document.getElementById('successMsg');
+          msg.style.display = 'block';
+          msg.querySelector('p').innerHTML =
+            lang === 'ru'
+              ? `Спасибо, ${name}!<br>Ваш ответ принят. До встречи на торжестве!`
+              : `Рахмет, ${name}!<br>Жауабыңыз қабылданды. Тойда кездесеміз!`;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('Ошибка при отправке. Попробуйте еще раз.');
+          btn.disabled = false;
+          btn.textContent = lang === 'ru' ? 'Отправить' : 'Жіберу';
+        });
+    });
 
     // ── ANIMATION ENGINE ──────────────────────────────────
-    /**
-     * Triggers [data-anim] elements by adding .animated class.
-     * JS sets CSS custom property --d (delay in ms) from data-d attribute.
-     */
     function revealElements(container) {
       container.querySelectorAll('[data-anim]').forEach(el => {
         el.style.setProperty('--d', (el.dataset.d || '0') + 'ms');
-        // Double rAF ensures initial opacity:0 state is painted before animation starts
         requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('animated')));
       });
     }
 
-    // Hero — triggered after fonts + images ready (not scroll)
     function revealHero() {
       revealElements(document.querySelector('.hero'));
     }
 
-    // Scroll-triggered sections
     const sectionObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -378,26 +427,72 @@
 
     document.querySelectorAll('[data-section]').forEach(s => sectionObs.observe(s));
 
-    // ── FONT + IMAGE PRELOAD GATE ─────────────────────────
-    /**
-     * Wait for:
-     *  1. document.fonts.ready  — Kaligrafic & Google Fonts loaded
-     *  2. Background image decoded
-     * Max wait: 2000ms — then show anyway (fallback)
-     */
-    const bgImage = new Image();
-    bgImage.src = 'assets/images/pexels-marina-zasorina-7717488.jpg';
+    // ── FALLING PETALS ───────────────────────────────────
+    (function () {
+      const layer = document.createElement('div');
+      layer.id = 'petals-layer';
+      document.body.appendChild(layer);
 
-    const fontsReady   = document.fonts.ready;
-    const imageReady   = bgImage.decode ? bgImage.decode().catch(() => {}) : Promise.resolve();
-    const timeout      = new Promise(r => setTimeout(r, 2000));
+      // цвета: нежно-розовый, персиковый, золотой, кремовый, мятный
+      const COLORS = ['#f4c2c2','#f9d5bc','#c9a864','#f0e0d0','#d4e8c4','#efd5e8'];
+      // типы форм: капля, лист, овал
+      const RADIUS = ['50% 50% 50% 0','60% 0 60% 0','50%'];
+      let active = 0;
+      const MAX  = 16;
 
-    Promise.race([
-      Promise.all([fontsReady, imageReady]),
-      timeout
-    ]).then(() => {
-      document.body.classList.add('ready');  // body opacity: 0 → 1
-      revealHero();                          // start hero animations
+      function spawn() {
+        if (active >= MAX) return;
+        active++;
+
+        const el   = document.createElement('div');
+        el.className = 'fp';
+
+        const size = 5 + Math.random() * 8;
+        const type = Math.floor(Math.random() * 3);
+        const dur  = 4.5 + Math.random() * 4;
+        const dx   = -50 + Math.random() * 100;
+        const rot  = 300 + Math.random() * 420;
+
+        el.style.cssText = `
+          left:${(Math.random() * 105 - 2)}%;
+          width:${size}px;
+          height:${type === 2 ? size : size*(1.3 + Math.random()*0.7)}px;
+          background:${COLORS[Math.floor(Math.random()*COLORS.length)]};
+          border-radius:${RADIUS[type]};
+          --dx:${dx}px;--rot:${rot}deg;
+          animation:fpFall ${dur}s linear forwards;
+        `;
+
+        layer.appendChild(el);
+        el.addEventListener('animationend', () => { el.remove(); active--; }, { once: true });
+      }
+
+      // первый залп
+      for (let i = 0; i < 10; i++) setTimeout(spawn, i * 180);
+      // непрерывный поток
+      setInterval(spawn, 380);
+    })();
+
+    // ── FONT + IMAGE LOAD GATE ────────────────────────────────────
+    function loadImage(src) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = img.onerror = resolve;
+        img.src = src;
+        if (img.complete) resolve();
+      });
+    }
+
+    const fontsReady  = document.fonts.ready;
+    const imagesReady = Promise.all([
+      loadImage('assets/images/hero-background-top.webp'),
+      loadImage('assets/images/hero-background-bottom.webp'),
+    ]);
+    const timeout = new Promise(r => setTimeout(r, 3000));
+
+    Promise.race([Promise.all([fontsReady, imagesReady]), timeout]).then(() => {
+      document.body.classList.add('ready');
+      revealHero();
     });
   </script>
 </body>
