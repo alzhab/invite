@@ -479,7 +479,7 @@ body.ready {
 
 /* ══ HOSTS ══ */
 .hosts-section {
-  padding: 40px 28px 52px;
+  padding: 40px 28px 28px;
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
@@ -499,7 +499,7 @@ body.ready {
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--gold2);
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .hosts-name {
