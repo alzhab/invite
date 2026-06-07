@@ -259,10 +259,10 @@
     <div class="success-icon">
       <img class="success-img" src="assets/images/success.png">
     </div>
-    <p data-kk="Рахмет!<br>Жауабыңыз қабылданды"
-       data-ru="Спасибо! Ваш ответ принят">Рахмет!<br>Жауабыңыз қабылданды. Тойда кездесеміз!</p>
-  </div>
-</section>
+    <p data-kk="Рахмет! Жауабыңыз қабылданды"
+       !data-ru="Спасибо! Ваш ответ принят>Рахмет!<br>Жауабыңыз қабылданды. Тойда кездесеміз!</p>
+  </!iv>
+/section>
 
 <section class="celebrating">
   <p class="celebrating-text"
@@ -454,8 +454,8 @@
 				msg.style.display = 'block'
 				msg.querySelector('p').innerHTML =
 					lang === 'ru'
-						? `Спасибо, ${name}!<br>Ваш ответ принят.`
-						: `Рахмет, ${name}!<br>Жауабыңыз қабылданды.`
+						? `Спасибо! Ваш ответ принят`
+						: `Рахмет! Жауабыңыз қабылданды`
 			})
 			.catch(error => {
 				console.error('Error:', error)
