@@ -342,7 +342,8 @@
 
 	// ── ПЕРСОНАЛИЗАЦИЯ ПО URL ─────────────────────────────
 	;(function () {
-		const guest = new URLSearchParams(location.search).get('guest')
+		const raw   = new URLSearchParams(location.search).get('guest')
+		const guest = raw ? raw.replace(/\s*-\s*/g, ' - ') : null
 		if (!guest) return
 		const general  = document.getElementById('greeting-general')
 		const personal = document.getElementById('greeting-personal')
