@@ -259,8 +259,8 @@
     <div class="success-icon">
       <img class="success-img" src="assets/images/success.png">
     </div>
-    <p data-kk="Рахмет! Жауабыңыз қабылданды"
-       data-ru="Спасибо! Ваш ответ принят">Рахмет! Жауабыңыз қабылданды</p>
+    <p data-kk="Рахмет, Жауабыңыз қабылданды"
+       data-ru="Спасибо, Ваш ответ принят">Рахмет, Жауабыңыз қабылданды</p>
   </div>
 </section>
 
@@ -341,7 +341,9 @@
 		const personal = document.getElementById('greeting-personal')
 		if (personal && personal.dataset.guest) {
 			const g = personal.dataset.guest
-			personal.innerHTML = l === 'ru' ? `Уважаемые<br>${g}!` : `Құрметті<br>${g}!`
+			const isSingle = !g.includes(' - ')
+			const ruPrefix = isSingle ? 'Уважаемый' : 'Уважаемые'
+			personal.innerHTML = l === 'ru' ? `${ruPrefix}<br>${g}!` : `Құрметті<br>${g}!`
 		}
 	}
 
@@ -357,6 +359,17 @@
 		personal.style.display      = 'block'
 		personal.dataset.guest      = guest
 		personal.innerHTML          = `Құрметті<br>${guest}!`
+
+		// Если одно имя (нет " - ") — склоняем invite-pre в единственное число
+		const isSingle = !guest.includes(' - ')
+		if (isSingle) {
+			const pre = document.querySelector('.invite-pre')
+			if (pre) {
+				pre.dataset.kk = 'СІЗДІ АЯУЛЫ ҚЫЗЫМЫЗ'
+				pre.dataset.ru = 'Приглашаем Вас стать почётным гостем на торжественном празднике, посвящённом проводам нашей любимой дочери'
+				pre.textContent = pre.dataset.kk
+			}
+		}
 	})()
 
 	// ── CALENDAR ─────────────────────────────────────────
@@ -453,8 +466,8 @@
 				const msg = document.getElementById('successMsg')
 				msg.style.display = 'block'
 				const p = msg.querySelector('p')
-				p.dataset.kk = `Рахмет ${name}! Жауабыңыз қабылданды`
-				p.dataset.ru = `Спасибо ${name}! Ваш ответ принят`
+				p.dataset.kk = `Рахмет, ${name}! Жауабыңыз қабылданды`
+				p.dataset.ru = `Спасибо, ${name}! Ваш ответ принят`
 				p.textContent = lang === 'ru' ? p.dataset.ru : p.dataset.kk
 			})
 			.catch(error => {
