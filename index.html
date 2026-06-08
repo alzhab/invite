@@ -326,6 +326,12 @@
 	// ── LANGUAGE ─────────────────────────────────────────
 	let lang = 'kk'
 
+	// Определяет пол по окончанию имени (казахские и русские имена)
+	function isFemale(name) {
+		const n = name.trim().toLowerCase()
+		return /а$|я$|нар$|гүл$|гул$|жан$|ай$|ым$|ана$|ия$|ра$/.test(n)
+	}
+
 	function setLang(l) {
 		lang = l
 		document.getElementById('btn-kk').classList.toggle('active', l === 'kk')
@@ -342,7 +348,9 @@
 		if (personal && personal.dataset.guest) {
 			const g = personal.dataset.guest
 			const isSingle = !g.includes(' - ')
-			const ruPrefix = isSingle ? 'Уважаемый' : 'Уважаемые'
+			const ruPrefix = isSingle
+				? (isFemale(g) ? 'Уважаемая' : 'Уважаемый')
+				: 'Уважаемые'
 			personal.innerHTML = l === 'ru' ? `${ruPrefix}<br>${g}!` : `Құрметті<br>${g}!`
 		}
 	}
@@ -601,3 +609,4 @@
 </script>
 </body>
 </html>
+
