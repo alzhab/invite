@@ -378,6 +378,18 @@
 				pre.textContent = pre.dataset.kk
 			}
 		}
+
+		// Скрываем поле имени и счётчик — имя уже известно из URL
+		const form = document.getElementById('rsvpForm')
+		if (form) {
+			form.dataset.presetName = guest
+			form.dataset.presetCount = isSingle ? '1' : '2'
+			document.querySelector('.guest-count-block').style.display = 'none'
+			const nameInput = document.getElementById('rsvpName')
+			nameInput.removeAttribute('required')
+			nameInput.closest('div').style.display = 'none'
+			document.querySelector('.form-note').style.display = 'none'
+		}
 	})()
 
 	// ── CALENDAR ─────────────────────────────────────────
@@ -446,8 +458,10 @@
 	document.getElementById('rsvpForm').addEventListener('submit', function (e) {
 		e.preventDefault()
 
-		const name = document.getElementById('rsvpName').value.trim()
-		if (!name || !selectedAttend) {
+		const presetName  = e.target.dataset.presetName  || null
+		const presetCount = e.target.dataset.presetCount || null
+		const name = presetName || document.getElementById('rsvpName').value.trim()
+		if (!selectedAttend || (!presetName && !name)) {
 			alert(lang === 'ru' ? 'Заполните все поля.' : 'Барлық өрістерді толтырыңыз.')
 			return
 		}
@@ -461,7 +475,7 @@
 		const formData = new FormData()
 		formData.append('fullName', name)
 		formData.append('attendance', selectedAttend)
-		formData.append('guestCount', guestNum)
+		formData.append('guestCount', presetCount !== null ? presetCount : guestNum)
 		formData.append('lang', lang)
 
 		fetch(form.action, {
