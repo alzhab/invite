@@ -395,7 +395,7 @@
 	// ── ССЫЛКА ДЛЯ КОЛЛЕГ (без «+1», приходят только одни) ─
 	;(function () {
 		const params = new URLSearchParams(location.search)
-		if (params.get('colleague') !== '1') return
+		if (params.get('v') !== '2') return
 
 		const plus1 = document.getElementById('optPlus1')
 		if (plus1) plus1.style.display = 'none'
