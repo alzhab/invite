@@ -206,7 +206,7 @@
                 data-kk="ИӘ БАРАМЫН"
                 data-ru="ДА, ПРИДУ">ИӘ БАРАМЫН</span>
         </label>
-        <label class="radio-opt" onclick="selectOpt(this,'PLUS-1')">
+        <label class="radio-opt" id="optPlus1" onclick="selectOpt(this,'PLUS-1')">
           <input type="radio" name="attendance" value="PLUS-1"/>
           <div class="radio-circle"></div>
           <span class="radio-text"
@@ -390,6 +390,24 @@
 			nameInput.closest('div').style.display = 'none'
 			document.querySelector('.form-note').style.display = 'none'
 		}
+	})()
+
+	// ── ССЫЛКА ДЛЯ КОЛЛЕГ (без «+1», приходят только одни) ─
+	;(function () {
+		const params = new URLSearchParams(location.search)
+		if (params.get('colleague') !== '1') return
+
+		const plus1 = document.getElementById('optPlus1')
+		if (plus1) plus1.style.display = 'none'
+
+		const counterBlock = document.querySelector('.guest-count-block')
+		if (counterBlock) counterBlock.style.display = 'none'
+
+		const guestCount = document.getElementById('guestCount')
+		if (guestCount) guestCount.value = 1
+
+		const note = document.querySelector('.form-note')
+		if (note) note.style.display = 'none'
 	})()
 
 	// ── CALENDAR ─────────────────────────────────────────
